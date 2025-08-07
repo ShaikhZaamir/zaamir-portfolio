@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Contact.css";
-import { FaWhatsapp, FaEnvelope, FaLinkedin, FaStore } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaLinkedin, FaStore, FaGithub } from "react-icons/fa";
 import ReactGA from "react-ga4";
 
 const Contact = () => {
@@ -76,6 +76,11 @@ const Contact = () => {
           <a href="https://www.linkedin.com/in/shaikh-zaamir/" target="_blank" className="contact-card linkedin">
             <FaLinkedin className="icon" />
             <span>LinkedIn</span>
+          </a>
+
+          <a href="https://github.com/ShaikhZaamir" target="_blank" className="contact-card github">
+            <FaGithub className="icon" />
+            <span>GitHub</span>
           </a>
 
           <a href="https://www.fiverr.com/zaamir_shaikh" target="_blank" className="contact-card fiverr">

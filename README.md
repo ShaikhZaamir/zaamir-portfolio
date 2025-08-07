@@ -6,18 +6,16 @@ A modern and responsive personal portfolio website showcasing the work of **Zaam
 
 - **React.js** – UI development with component-based structure
 - **Vite** – Lightning-fast build tool and development server
+- **Node.js** - Scalable runtime environment for server-side development
 - **Tailwind CSS** – Utility-first CSS for custom styling
 - **Framer Motion** – Smooth animations and transitions
-- **React Helmet Async** – Dynamic meta tags for SEO & social sharing
-- **Google Analytics 4 + Microsoft Clarity** – Tracking & user insights
 
 ## 🚀 Features
 
 - Clean, modern & responsive UI/UX
 - Section-wise smooth scrolling
-- SEO-optimized with OG & Twitter meta tags
 - Google Analytics & Clarity integrated
-- Dark/light theme ready (optional toggle available)
+- SEO optimized with meta tags, structured data, and social media previews
 - Contact form with working submission & toasts
 - Resume download support
 
