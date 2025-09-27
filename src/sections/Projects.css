@@ -40,6 +40,9 @@
 }
 
 .project-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 20px;
 }
 
@@ -79,6 +82,8 @@
 }
 
 .project-links a {
+  margin-top: auto;
+  align-self: flex-start;
   margin-right: 15px;
   color: #0077cc;
   text-decoration: none;
@@ -127,7 +132,8 @@
   }
 
   .project-card:hover {
-    transform: scale(1.03); /* less intense on smaller screens */
+    transform: scale(1.03);
+    /* less intense on smaller screens */
   }
 
   .project-content h3 {

@@ -59,7 +59,7 @@ const Hero = () => {
           </Link>
 
           <a
-            href="https://rebrand.ly/zaamir-resume"
+            href="https://rebrand.ly/zaamir-cv"
             target="_blank"
             rel="noopener noreferrer"
             className="hero-button resume-button"
