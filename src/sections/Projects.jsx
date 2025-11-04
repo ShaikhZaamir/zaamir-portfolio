@@ -105,8 +105,7 @@ const projects = [
       "NextAuth.js",
       "Railway",
     ],
-    github: "https://github.com/shaikhzaamir04/pxllar-store",
-    underdev: true,
+    github: "https://github.com/ShaikhZaamir/PxllarEcommerceStore",
   },
   {
     title: "Luvana AI Chatbot",
