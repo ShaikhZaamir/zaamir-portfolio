@@ -81,6 +81,15 @@
   transition: color 0.3s;
 }
 
+.project-links {
+  margin-top: auto;
+  display: inline-block;
+  margin-top: auto;
+  padding-top: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
 .project-links a {
   margin-top: auto;
   align-self: flex-start;

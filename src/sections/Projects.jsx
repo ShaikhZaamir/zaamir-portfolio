@@ -15,15 +15,24 @@ const projects = [
       "Railway",
     ],
     github: "https://runwayyclothing.vercel.app/",
-
   },
+
+  {
+    title: "Memorae Landing Page (Frontend Challenge)",
+    description:
+      "Modern, responsive landing page for an AI-powered WhatsApp assistant, built with React and Tailwind using a modular component architecture.",
+    tech: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
+    github: "https://memorae-intro.vercel.app/",
+  },
+
   {
     title: "Luvana AI Chatbot",
     description:
       "Responsive AI chatbot application with conversational intelligence, Node.js backend integration, and scalable Vercel deployment.",
-    tech: ["React.js", "Node.js", "OpenAI API", "Tailwind CSS", "Vercel"],
+    tech: ["React", "Node.js", "OpenAI API", "Tailwind CSS", "Vercel"],
     github: "https://luvana-ai.vercel.app/",
   },
+
   {
     title: "Portfolio Website",
     description:
@@ -31,6 +40,7 @@ const projects = [
     tech: ["React", "Vite", "Framer Motion"],
     github: "https://zaamir-portfolio.vercel.app/",
   },
+
   {
     title: "Kyara Homepage",
     description:
@@ -38,6 +48,7 @@ const projects = [
     tech: ["HTML", "CSS", "JS"],
     github: "https://shaikhzaamir04.github.io/kyara-homepage/",
   },
+
   {
     title: "Unity 3D Game",
     description: "Immersive 3D adventure game developed in Unity with C# scripting and Unity assets for rich visuals and gameplay.",

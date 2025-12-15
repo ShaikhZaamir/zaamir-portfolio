@@ -45,6 +45,8 @@ const App = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  console.log("App rendered");
+
   return (
     <>
       <SEO
@@ -53,6 +55,7 @@ const App = () => {
         image="https://zaamir-portfolio.vercel.app/og-image.png"
         url="https://zaamir-portfolio.vercel.app/"
       />
+
       <Navbar />
       <Hero />
       <About />
