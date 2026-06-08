@@ -72,7 +72,7 @@ export default function Testimonials() {
                         TESTIMONIALS
                     </p>
 
-                    <h2 className="mt-4 text-3xl font-bold md:text-5xl">
+                    <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
                         Trusted By Clients Worldwide
                     </h2>
 
