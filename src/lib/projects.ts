@@ -6,10 +6,10 @@ export const projects = [
         type: "Full Stack E-Commerce Platform",
 
         summary:
-            "Production-ready e-commerce platform featuring secure authentication, product management, Razorpay integration, and a custom partial-payment checkout workflow.",
+            "Production-ready e-commerce platform featuring secure authentication, product management, Razorpay integration, and a custom partial-payment checkout workflow tailored to real business requirements.",
 
         description:
-            "Modern e-commerce platform featuring authentication, product management, secure checkout, and a custom partial payment workflow.",
+            "Full-stack e-commerce platform featuring secure authentication, product management, order processing, and a custom partial-payment workflow tailored to business requirements.",
 
         tech: [
             "Next.js",
@@ -24,10 +24,10 @@ export const projects = [
             "Build a scalable e-commerce platform capable of handling authentication, product management, checkout workflows, and secure payment processing while maintaining a seamless user experience.",
 
         solution:
-            "Developed a full-stack architecture using Next.js, Medusa.js, PostgreSQL, NextAuth.js, and Razorpay while implementing a custom partial-payment workflow designed specifically for the business model.",
+            "Developed a full-stack architecture using Next.js, Medusa.js, PostgreSQL, NextAuth.js, and Razorpay, implementing a custom partial-payment workflow that aligned with the business's payment and order fulfillment requirements.",
 
         impact:
-            "Enabled flexible payment-on-delivery workflows, improved customer trust during checkout, and delivered a production-ready online shopping experience.",
+            "Enabled flexible payment-on-delivery workflows, improved customer confidence during checkout, streamlined order management processes, and delivered a production-ready e-commerce experience.",
 
         features: [
             "Product Catalog Management",
@@ -58,10 +58,10 @@ export const projects = [
         type: "Business Management Platform",
 
         summary:
-            "Multi-role vendor management platform featuring onboarding, product administration, review systems, and business operations management.",
+            "Multi-role vendor management platform designed to streamline vendor onboarding, product administration, review management, and day-to-day business operations.",
 
         description:
-            "Vendor onboarding, product management, ratings, reviews, and administration platform.",
+            "Business management platform enabling vendor onboarding, product management, ratings, reviews, and administrative workflows through a centralized dashboard.",
 
         tech: [
             "Next.js",
@@ -71,13 +71,13 @@ export const projects = [
         ],
 
         challenge:
-            "Create a centralized platform for vendor onboarding, product management, ratings, reviews, and administrative operations.",
+            "Build a centralized platform capable of managing vendor onboarding, product administration, ratings, reviews, and operational workflows through a unified system.",
 
         solution:
-            "Developed a multi-role platform with vendor dashboards, authentication, CRUD operations, search functionality, filtering systems, and review management.",
+            "Developed a multi-role platform featuring vendor dashboards, secure authentication, product management workflows, advanced search and filtering, and review management capabilities.",
 
         impact:
-            "Streamlined vendor operations, reduced management overhead, and improved transparency across business workflows.",
+            "Streamlined vendor operations, reduced administrative overhead, improved workflow transparency, and centralized key business management processes.",
 
         features: [
             "Vendor Registration",
@@ -90,7 +90,7 @@ export const projects = [
 
         technicalHighlights: [
             "Built multi-role authentication system",
-            "Implemented advanced CRUD operations",
+            "Implemented role-based data management",
             "Developed vendor onboarding workflow",
             "Integrated search and filtering",
             "Created review management system",
@@ -108,10 +108,10 @@ export const projects = [
         type: "Administrative Business System",
 
         summary:
-            "Business administration platform for managing mobile device evaluations, inventory operations, purchase workflows, and reporting.",
+            "Business administration platform designed to streamline mobile device evaluations, inventory management, purchase workflows, reporting, and day-to-day operational processes.",
 
         description:
-            "Admin platform for managing mobile device evaluations, inventory, purchase orders, and operational workflows.",
+            "Administrative platform designed to streamline device evaluations, inventory management, purchase orders, and day-to-day business operations.",
 
         tech: [
             "Next.js",
@@ -123,10 +123,10 @@ export const projects = [
             "Manage the complete lifecycle of mobile device acquisition, evaluation, inventory tracking, and resale operations within a single system.",
 
         solution:
-            "Developed dashboards, inventory systems, purchase-order management, pricing workflows, reporting modules, and operational tracking tools.",
+            "Developed a centralized administrative platform featuring operational dashboards, inventory management, purchase-order workflows, pricing modules, reporting systems, and business process tracking tools.",
 
         impact:
-            "Improved operational visibility, reduced manual processes, and streamlined day-to-day business management activities.",
+            "Improved operational visibility, reduced manual effort, streamlined inventory and purchasing workflows, and enhanced overall business process efficiency.",
 
         features: [
             "Device Evaluation",
@@ -143,7 +143,7 @@ export const projects = [
             "Created reporting dashboards",
             "Designed operational management tools",
             "Developed pricing management modules",
-            "Centralized business operations",
+            "Centralized operational workflows",
         ],
 
         githubUrl: "https://github.com/ShaikhZaamir",

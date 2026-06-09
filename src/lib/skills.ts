@@ -3,24 +3,46 @@ import {
     SiNextdotjs,
     SiTypescript,
     SiJavascript,
+    SiHtml5,
+    SiCss,
     SiTailwindcss,
     SiFramer,
     SiNodedotjs,
     SiExpress,
     SiStrapi,
+    SiPhp,
     SiPostgresql,
     SiMysql,
     SiMongodb,
+    SiFirebase,
     SiPrisma,
     SiJsonwebtokens,
     SiPython,
     SiGithub,
+    SiGit,
     SiPostman,
     SiVercel,
     SiRailway,
+    SiSupabase,
+    SiAuth0,
+    SiAndroidstudio,
+    SiWordpress,
+    SiShopify,
+    SiOpenai,
 } from "react-icons/si";
 
-import { ShieldCheck } from "lucide-react";
+import {
+    ShieldCheck,
+    Database,
+    Cloud,
+    Workflow,
+    Cpu,
+    Zap,
+    Search,
+    Bug,
+    TestTube,
+    GitBranch,
+} from "lucide-react";
 
 export const skillCategories = {
     frontend: [
@@ -49,6 +71,18 @@ export const skillCategories = {
             usedIn: ["All Projects"],
         },
         {
+            name: "HTML5",
+            icon: SiHtml5,
+            description: "Semantic and accessible web structure.",
+            usedIn: ["All Projects"],
+        },
+        {
+            name: "CSS3",
+            icon: SiCss,
+            description: "Modern styling and layouts.",
+            usedIn: ["All Projects"],
+        },
+        {
             name: "Tailwind CSS",
             icon: SiTailwindcss,
             description: "Rapid modern UI development.",
@@ -59,6 +93,30 @@ export const skillCategories = {
             icon: SiFramer,
             description: "Beautiful UI animations.",
             usedIn: ["Portfolio"],
+        },
+        {
+            name: "Responsive Web Design",
+            icon: SiCss,
+            description: "Building seamless experiences across devices.",
+            usedIn: ["All Web Applications"],
+        },
+        {
+            name: "App Router",
+            icon: SiNextdotjs,
+            description: "Modern Next.js application architecture.",
+            usedIn: ["Runwayy Store", "Portfolio"],
+        },
+        {
+            name: "shadcn/ui",
+            icon: SiReact,
+            description: "Reusable accessible UI components.",
+            usedIn: ["Portfolio", "Runwayy Store"],
+        },
+        {
+            name: "State Management",
+            icon: Workflow,
+            description: "Managing application state and data flow.",
+            usedIn: ["React Applications"],
         },
     ],
 
@@ -80,6 +138,24 @@ export const skillCategories = {
             icon: SiStrapi,
             description: "Headless CMS and API management.",
             usedIn: ["QuickSO"],
+        },
+        {
+            name: "REST APIs",
+            icon: Workflow,
+            description: "Building and integrating scalable APIs.",
+            usedIn: ["QuickSO", "Vendor Portal", "Runwayy Store"],
+        },
+        {
+            name: "PHP",
+            icon: SiPhp,
+            description: "Backend development and integrations.",
+            usedIn: ["Client Projects"],
+        },
+        {
+            name: "Razorpay",
+            icon: Workflow,
+            description: "Payment gateway integration.",
+            usedIn: ["Runwayy Store"],
         },
     ],
 
@@ -103,10 +179,22 @@ export const skillCategories = {
             usedIn: ["Personal Projects"],
         },
         {
+            name: "Firebase",
+            icon: SiFirebase,
+            description: "Realtime backend services.",
+            usedIn: ["Personal Projects"],
+        },
+        {
             name: "Prisma ORM",
             icon: SiPrisma,
             description: "Modern database toolkit.",
             usedIn: ["Runwayy Store"],
+        },
+        {
+            name: "SQL",
+            icon: Database,
+            description: "Database querying and optimization.",
+            usedIn: ["QuickSO", "Client Projects"],
         },
     ],
 
@@ -119,7 +207,7 @@ export const skillCategories = {
         },
         {
             name: "OAuth",
-            icon: ShieldCheck,
+            icon: SiAuth0,
             description: "Secure third-party authentication.",
             usedIn: ["Modern SaaS Apps"],
         },
@@ -135,30 +223,54 @@ export const skillCategories = {
             description: "Authentication infrastructure.",
             usedIn: ["Modern Applications"],
         },
+        {
+            name: "Supabase Auth",
+            icon: SiSupabase,
+            description: "Authentication and user management.",
+            usedIn: ["Personal Projects"],
+        },
+        {
+            name: "NextAuth.js",
+            icon: ShieldCheck,
+            description: "Authentication for Next.js applications.",
+            usedIn: ["Runwayy Store"],
+        },
     ],
 
     ai: [
         {
             name: "Python",
             icon: SiPython,
-            description: "AI integrations and automation.",
+            description: "Programming, automation, and AI.",
             usedIn: ["AI Projects"],
+        },
+        {
+            name: "AI Integration",
+            icon: SiOpenai,
+            description: "Connecting applications with AI services.",
+            usedIn: ["AI Applications"]
+        },
+        {
+            name: "Computer Vision",
+            icon: Cpu,
+            description: "Image processing and recognition systems.",
+            usedIn: ["Academic Projects"],
+        },
+        {
+            name: "Machine Learning Fundamentals",
+            icon: Zap,
+            description: "Fundamentals of machine learning and predictive systems.",
+            usedIn: ["AI Projects"],
+        },
+        {
+            name: "Automation Scripts",
+            icon: Workflow,
+            description: "Automating repetitive workflows.",
+            usedIn: ["Personal Projects"],
         },
     ],
 
-    tools: [
-        {
-            name: "GitHub",
-            icon: SiGithub,
-            description: "Version control and collaboration.",
-            usedIn: ["Every Project"],
-        },
-        {
-            name: "Postman",
-            icon: SiPostman,
-            description: "API testing and development.",
-            usedIn: ["Backend Development"],
-        },
+    cloud: [
         {
             name: "Vercel",
             icon: SiVercel,
@@ -171,5 +283,114 @@ export const skillCategories = {
             description: "Backend and database deployment.",
             usedIn: ["Runwayy Store"],
         },
+        {
+            name: "Production Deployment",
+            icon: Cloud,
+            description: "Production application releases.",
+            usedIn: ["All Projects"],
+        },
+        {
+            name: "Application Configuration",
+            icon: Cloud,
+            description: "Managing application configurations.",
+            usedIn: ["Production Applications"],
+        },
     ],
+
+    tools: [
+        {
+            name: "Git",
+            icon: SiGit,
+            description: "Version control workflows.",
+            usedIn: ["Every Project"],
+        },
+        {
+            name: "GitHub",
+            icon: SiGithub,
+            description: "Source control and collaboration.",
+            usedIn: ["Every Project"],
+        },
+        {
+            name: "Postman",
+            icon: SiPostman,
+            description: "API testing and development.",
+            usedIn: ["Backend Development"],
+        },
+        {
+            name: "Android Studio",
+            icon: SiAndroidstudio,
+            description: "Mobile application development.",
+            usedIn: ["Academic Projects"],
+        },
+        {
+            name: "WordPress",
+            icon: SiWordpress,
+            description: "CMS and website development.",
+            usedIn: ["Client Projects"],
+        },
+        {
+            name: "Shopify",
+            icon: SiShopify,
+            description: "E-commerce platform development.",
+            usedIn: ["Client Projects"],
+        },
+    ],
+
+    concepts: [
+        {
+            name: "Full Stack Development",
+            icon: Workflow,
+            description: "End-to-end application development.",
+            usedIn: ["QuickSO", "Runwayy Store"],
+        },
+        {
+            name: "API Integration",
+            icon: Workflow,
+            description: "Connecting external services and systems.",
+            usedIn: ["All Projects"],
+        },
+        {
+            name: "Performance Optimization",
+            icon: Zap,
+            description: "Improving application speed and efficiency.",
+            usedIn: ["Production Applications"],
+        },
+        {
+            name: "SEO",
+            icon: Search,
+            description: "Search engine optimization practices.",
+            usedIn: ["Web Applications"],
+        },
+        {
+            name: "E-Commerce Development",
+            icon: SiShopify,
+            description: "Building online commerce solutions.",
+            usedIn: ["Runwayy Store"],
+        },
+        {
+            name: "Software Testing",
+            icon: TestTube,
+            description: "Validation and quality assurance.",
+            usedIn: ["QuickSO"],
+        },
+        {
+            name: "Bug Fixing & Maintenance",
+            icon: Bug,
+            description: "Production issue resolution.",
+            usedIn: ["QuickSO"],
+        },
+        {
+            name: "Business Workflow Automation",
+            icon: Workflow,
+            description: "Automating operational processes.",
+            usedIn: ["QuickSO"],
+        },
+        {
+            name: "Agile Development",
+            icon: GitBranch,
+            description: "Collaborative iterative development.",
+            usedIn: ["Professional Experience"],
+        },
+    ],
+
 };

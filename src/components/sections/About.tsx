@@ -115,12 +115,11 @@ export default function About() {
                     </h3>
 
                     <p className="mt-6 leading-7 text-slate-400">
-                        I enjoy building software that creates measurable value
-                        for users and businesses. My interests span full-stack
-                        development, SaaS products, AI-powered applications,
-                        and scalable system design. I'm constantly learning,
-                        experimenting, and improving my craft while focusing on
-                        writing clean, maintainable, and impactful software.
+                        I enjoy building software that creates measurable value for users and businesses.
+                        My interests span full-stack development, SaaS platforms, business applications, AI-powered
+                        solutions, and scalable system design. Through freelance projects, production SaaS development,
+                        and continuous learning, I focus on writing clean, maintainable, and impactful software that
+                        solves real problems.
                     </p>
 
                     <div className="mt-10 grid gap-8 md:grid-cols-2">
@@ -156,7 +155,7 @@ export default function About() {
                                     "System Design",
                                     "AI Integration",
                                     "Scalable Architectures",
-                                    "Modern Web Technologies",
+                                    "Cloud & Deployment Practices",
                                 ].map((item) => (
                                     <span
                                         key={item}

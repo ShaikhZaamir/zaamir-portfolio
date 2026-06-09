@@ -34,7 +34,7 @@ function AnimatedNumber({
         if (!isInView) return;
 
         const controls = animate(0, value, {
-            duration: 1.5,
+            duration: 3,
             onUpdate(latest) {
                 setDisplayValue(Math.floor(latest));
             },
@@ -75,16 +75,10 @@ export default function Testimonials() {
                     <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
                         Trusted By Clients Worldwide
                     </h2>
-
-                    <p className="mt-6 text-slate-400">
-                        Feedback from clients and businesses I've worked with
-                        across software development, web applications, and
-                        custom software projects.
-                    </p>
                 </div>
 
                 {/* Stats */}
-                <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
                     {[
                         {
                             value: 5,
@@ -126,8 +120,8 @@ export default function Testimonials() {
                 </div>
 
                 <p className="mx-auto mt-8 max-w-3xl text-center text-slate-400">
-                    Trusted by clients across web development, custom software,
-                    e-commerce solutions, and full-stack applications.
+                    Feedback from clients and businesses I've collaborated with on web development, 
+                    custom software, and game development projects.
                 </p>
 
                 {/* Featured Testimonial */}
@@ -136,7 +130,7 @@ export default function Testimonials() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4 }}
-                    className="mt-16 rounded-3xl border border-primary/20 bg-white/5 p-8 backdrop-blur-xl"
+                    className="mt-13 rounded-3xl border border-primary/20 bg-white/5 p-8 backdrop-blur-xl"
                 >
                     <div className="mb-4 flex gap-1">
                         {Array.from({ length: 5 }).map((_, index) => (

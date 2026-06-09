@@ -50,7 +50,7 @@ const stats = [
         value: 10,
         suffix: "+",
         unit: "",
-        label: "Projects Delivered",
+        label: "Projects Built",
         decimals: 0,
     },
     {
@@ -123,16 +123,15 @@ export default function Hero() {
                         <br />
                         SaaS Platforms, Business Systems &
                         <br />
-                        Modern Web Applications
+                        Digital Products
                     </h1>
 
                     {/* Description */}
                     <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-slate-400">
-                        I&apos;m a Software Developer specializing in full-stack
-                        development with experience building production-ready SaaS
-                        platforms, business applications, e-commerce solutions,
-                        and AI-powered systems using React, Next.js, TypeScript,
-                        Node.js, PostgreSQL, and Python.
+                        I'm a Software Developer specializing in full-stack development, building production-ready
+                        SaaS platforms, business applications, e-commerce systems, and AI-powered solutions. I focus
+                        on creating scalable, user-centric software using modern technologies including <br />
+                        React, Next.js, TypeScript, Node.js, PostgreSQL, and Python.
                     </p>
 
                     {/* CTA */}
@@ -164,7 +163,7 @@ export default function Hero() {
                     </div>
 
                     {/* Stats */}
-                    <div className="mt-14 w-full grid grid-cols-2 gap-4 lg:grid-cols-4">
+                    <div className="mt-10 w-full grid grid-cols-2 gap-4 lg:grid-cols-4">
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}

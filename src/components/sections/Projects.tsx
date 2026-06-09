@@ -30,9 +30,8 @@ export default function Projects() {
                     </h2>
 
                     <p className="mt-4 text-slate-400">
-                        A selection of production-ready platforms,
-                        business applications, and software systems
-                        built for real users and real business workflows.
+                        A showcase of production-ready SaaS platforms, business applications, and software systems designed to
+                        solve real-world challenges and support business operations.
                     </p>
                 </div>
 
@@ -105,7 +104,7 @@ export default function Projects() {
                         className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-white/10"
                     >
                         <span className="font-medium text-white">
-                            View More Projects on GitHub
+                            Explore More Projects on GitHub
                         </span>
 
                         <ArrowRight className="h-4 w-4 text-primary transition-transform duration-300 group-hover:translate-x-1" />

@@ -20,7 +20,7 @@ export const experiences = [
         current: false,
 
         description:
-            "Delivered websites, web applications, and custom software solutions for clients across various domains.",
+            "Designed and developed websites, web applications, and custom software solutions for clients across multiple industries, delivering end-to-end projects from concept to deployment.",
 
         highlights: [
             "10+ Projects Delivered",
@@ -45,7 +45,7 @@ export const experiences = [
         current: false,
 
         description:
-            "Worked on Unity-based applications and gained experience in software development workflows.",
+            "Contributed to Unity-based applications while gaining hands-on experience in software development workflows, version control, and collaborative development practices.",
 
         highlights: [
             "Unity Development",
@@ -70,12 +70,12 @@ export const experiences = [
         current: false,
 
         description:
-            "Contributed to SaaS platform development and production software workflows.",
+            "Contributed to the maintenance and testing of a production SaaS platform, resolving frontend and backend issues, validating business workflows, performing functional testing, and supporting software solutions used by real clients.",
 
         highlights: [
             "Production SaaS Platform",
-            "Frontend Development",
-            "Real Business Workflows",
+            "Bug Fixing & Maintenance",
+            "Software Testing & QA",
         ],
 
         tech: ["React", "Next.js", "TypeScript"],
@@ -95,12 +95,12 @@ export const experiences = [
         current: true,
 
         description:
-            "Building and maintaining features for a Construction Management SaaS platform.",
+            "Building and maintaining a production Construction Management SaaS platform, developing full-stack features, optimizing business workflows, resolving production issues, and supporting software used by real businesses.",
 
         highlights: [
             "Production SaaS Platform",
             "Full Stack Development",
-            "React + Next.js + TypeScript",
+            "Business Workflow Solutions",
         ],
 
         tech: [

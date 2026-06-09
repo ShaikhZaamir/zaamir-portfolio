@@ -85,7 +85,7 @@ export default function Navbar() {
             transition={{ duration: 0.4 }}
             className="fixed inset-x-0 top-0 z-50"
         >
-            <div className="mx-auto max-w-5xl px-6 py-2">
+            <div className="mx-auto max-w-5xl px-6 pb-2 pt-1">
                 <div
                     className={`relative flex items-center justify-between rounded-full px-6 py-2 transition-all duration-300 ${scrolled
                         ? "border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.25)]"

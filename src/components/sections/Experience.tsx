@@ -44,8 +44,8 @@ export default function Experience() {
                     </h2>
 
                     <p className="mt-4 text-slate-400">
-                        A journey from freelance development to building
-                        production SaaS applications used by real businesses.
+                        From freelance projects to production SaaS platforms, building software solutions used by 
+                        businesses and real-world users.
                     </p>
                 </div>
 

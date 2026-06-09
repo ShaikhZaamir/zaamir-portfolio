@@ -13,10 +13,12 @@ import { useEffect, useRef, useState } from "react";
 const tabs = [
     { id: "frontend", label: "Frontend" },
     { id: "backend", label: "Backend" },
-    { id: "database", label: "Database" },
-    { id: "auth", label: "Authentication" },
-    { id: "ai", label: "AI" },
+    { id: "database", label: "Databases" },
+    { id: "auth", label: "Security" },
+    { id: "ai", label: "AI & Python" },
+    { id: "cloud", label: "Cloud" },
     { id: "tools", label: "Tools" },
+    { id: "concepts", label: "Concepts" },
 ] as const;
 
 function TechCounter() {
@@ -86,8 +88,9 @@ export default function Skills() {
                     </h2>
 
                     <p className="mt-4 text-slate-400">
-                        The technologies, frameworks, and tools I use to
-                        build scalable software products and business systems.
+                        A modern technology stack used to design, build, and maintain scalable SaaS platforms, business applications,
+                        e-commerce systems, and production software.
+
                     </p>
 
                     <div className="mt-10">
@@ -146,7 +149,7 @@ export default function Skills() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -15 }}
                         transition={{ duration: 0.25 }}
-                        className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3"
+                        className="mt-6 grid gap-x-6 gap-y-4 md:grid-cols-2 xl:grid-cols-3"
                     >
                         {skills.map((skill) => {
                             const Icon = skill.icon;
