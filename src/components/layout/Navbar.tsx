@@ -10,7 +10,6 @@ import {
     SheetContent,
     SheetTrigger,
 } from "@/components/ui/sheet";
-import Link from "next/link";
 
 const navItems = [
     { label: "Experience", id: "experience" },

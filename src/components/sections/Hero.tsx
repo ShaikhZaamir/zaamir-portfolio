@@ -5,13 +5,12 @@ import { LINKS } from "@/lib/constants";
 import { animate, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const softwareStartDate = new Date("2022-01-01");
 const industryStartDate = new Date("2026-01-01");
-
 const now = new Date();
+const softwareStartDate = new Date("2022-01-01");
 
 const softwareYears = Math.floor(
-    (now.getTime() - softwareStartDate.getTime()) /
+    (now.getTime() - softwareStartDate.getTime() - 1) /
     (1000 * 60 * 60 * 24 * 365.25)
 );
 
@@ -20,6 +19,7 @@ const totalMonths = Math.floor(
     (1000 * 60 * 60 * 24 * 30.44)
 );
 
+// Use Later After Continuing Job 
 const industryExperience =
     totalMonths < 12
         ? {
@@ -40,17 +40,17 @@ const stats = [
         decimals: 0,
     },
     {
-        value: Number(industryExperience.value),
+        value: 0.5,
         suffix: "+",
-        unit: industryExperience.unit,
+        unit: "Years",
         label: "Industry Experience",
-        decimals: 0,
+        decimals: 1,
     },
     {
         value: 10,
         suffix: "+",
         unit: "",
-        label: "Projects Built",
+        label: "Projects Delivered",
         decimals: 0,
     },
     {
@@ -114,7 +114,7 @@ export default function Hero() {
                 <div className="mx-auto max-w-4xl text-center">
                     {/* Eyebrow */}
                     <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                        Junior Software Developer @QuickSO
+                        Software Developer | Full Stack Developer
                     </p>
 
                     {/* Heading */}

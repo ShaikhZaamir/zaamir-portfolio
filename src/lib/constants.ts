@@ -1,5 +1,5 @@
 export const LINKS = {
-    RESUME: "https://drive.google.com/file/d/1Jcm6np4k3Rqc25jd_CiKjeWHqOY7iFxz/view?usp=drive_link",
+    RESUME: "https://drive.google.com/file/d/15VFP59g9EC2vj6H_DIAo55hvXdKCNyof/view?usp=sharing",
 
     GITHUB: "https://github.com/ShaikhZaamir",
     FIVERR: "https://www.fiverr.com/zaamir_shaikh",
@@ -8,8 +8,8 @@ export const LINKS = {
 
     PORTFOLIO: "https://zaamir.vercel.app",
     RUNWAYY_STORE: "https://runwayyclothing.vercel.app",
-    VENDOR_PORTAL: "https://vendor-portal-qso.vercel.app",
-    NOORMOBILESADMIN: "https://noormobiles-admin.vercel.app/admin/customers",
+    VENDOR_PORTAL: "https://vendor-portal-up.vercel.app",
+    NOORMOBILESADMIN: "https://noormobiles-admin.vercel.app",
 
     EMAIL: "shaikhzaamir04@gmail.com",
 };

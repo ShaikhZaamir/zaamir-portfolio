@@ -157,7 +157,7 @@ export default function Contact() {
 
                         <div className="flex items-center gap-2">
                             <span>🌍</span>
-                            <span>Open to Remote Opportunities</span>
+                            <span>Open to Remote & International Opportunities </span>
                         </div>
                     </div>
 

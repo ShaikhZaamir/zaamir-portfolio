@@ -7,10 +7,7 @@ import { experiences } from "@/lib/experience";
 
 export default function Experience() {
     const [selectedExperience, setSelectedExperience] =
-        useState(
-            experiences.find((item) => item.current) ??
-            experiences[0]
-        );
+        useState(experiences[experiences.length - 1]);
 
     const activeIndex = experiences.findIndex(
         (exp) => exp.title === selectedExperience.title
@@ -44,7 +41,7 @@ export default function Experience() {
                     </h2>
 
                     <p className="mt-4 text-slate-400">
-                        From freelance projects to production SaaS platforms, building software solutions used by 
+                        From freelance projects to production SaaS platforms, building software solutions used by
                         businesses and real-world users.
                     </p>
                 </div>
@@ -85,7 +82,7 @@ export default function Experience() {
                             }}
                         />
 
-                        <div className="grid grid-cols-4 gap-6">
+                        <div className="grid grid-cols-3 gap-6">
                             {experiences.map((experience) => {
                                 const Icon = experience.icon;
 
@@ -184,7 +181,7 @@ export default function Experience() {
                 </div>
 
                 {/* Experience Card */}
-                <div className="mx-auto mt-16 max-w-4xl">
+                <div className="mx-auto mt-16 max-w-5xl">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={selectedExperience.title}

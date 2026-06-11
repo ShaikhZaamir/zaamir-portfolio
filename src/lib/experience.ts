@@ -8,6 +8,31 @@ import {
 export const experiences = [
     {
         year: "2022",
+        duration: "Feb 2022 - May 2022",
+
+        badge: "INTERNSHIP",
+        badgeColor: "cyan",
+
+        title: "Unity Developer Intern",
+        company: "Vighnesh Inc.",
+        icon: Gamepad2,
+
+        current: false,
+
+        description:
+            "Contributed to Unity-based applications while gaining hands-on experience in software development workflows, version control, and collaborative development practices.",
+
+        highlights: [
+            "Unity Development",
+            "Game Mechanics",
+            "Version Control with Git",
+        ],
+
+        tech: ["Unity", "C#", "Git"],
+    },
+    
+    {
+        year: "2022",
         duration: "Jan 2022 - Dec 2024",
 
         badge: "FREELANCE",
@@ -32,33 +57,8 @@ export const experiences = [
     },
 
     {
-        year: "2022",
-        duration: "Feb 2022 - May 2022",
-
-        badge: "INTERNSHIP",
-        badgeColor: "cyan",
-
-        title: "Unity Developer Intern",
-        company: "Vighnesh Inc.",
-        icon: Gamepad2,
-
-        current: false,
-
-        description:
-            "Contributed to Unity-based applications while gaining hands-on experience in software development workflows, version control, and collaborative development practices.",
-
-        highlights: [
-            "Unity Development",
-            "Game Mechanics",
-            "Version Control with Git",
-        ],
-
-        tech: ["Unity", "C#", "Git"],
-    },
-
-    {
         year: "2026",
-        duration: "Jan 2026 - Jun 2026",
+        duration: "Jan 2026 - May 2026",
 
         badge: "INTERNSHIP",
         badgeColor: "cyan",
@@ -70,45 +70,14 @@ export const experiences = [
         current: false,
 
         description:
-            "Contributed to the maintenance and testing of a production SaaS platform, resolving frontend and backend issues, validating business workflows, performing functional testing, and supporting software solutions used by real clients.",
+            "Developed features for a production construction management SaaS platform, transforming Figma designs into responsive interfaces while building business modules, authentication workflows, and backend integrations.",
 
         highlights: [
             "Production SaaS Platform",
-            "Bug Fixing & Maintenance",
-            "Software Testing & QA",
+            "Figma to Production UI",
+            "Frontend & Backend Development",
         ],
 
         tech: ["React", "Next.js", "TypeScript"],
-    },
-
-    {
-        year: "Present",
-        duration: "Jun 2026 - Present",
-
-        badge: "CURRENT ROLE",
-        badgeColor: "emerald",
-
-        title: "Junior Software Developer",
-        company: "QuickSO",
-        icon: Star,
-
-        current: true,
-
-        description:
-            "Building and maintaining a production Construction Management SaaS platform, developing full-stack features, optimizing business workflows, resolving production issues, and supporting software used by real businesses.",
-
-        highlights: [
-            "Production SaaS Platform",
-            "Full Stack Development",
-            "Business Workflow Solutions",
-        ],
-
-        tech: [
-            "React",
-            "Next.js",
-            "TypeScript",
-            "Node.js",
-            "Strapi",
-        ],
     },
 ];
