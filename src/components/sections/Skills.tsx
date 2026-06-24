@@ -29,9 +29,7 @@ function TechCounter() {
         margin: "-100px",
     });
 
-    const totalSkills = Object.values(skillCategories)
-        .flat()
-        .length;
+    const totalSkills = Object.values(skillCategories).flat().length;
 
     const count = useMotionValue(0);
 
@@ -56,10 +54,7 @@ function TechCounter() {
     }, [isInView, count, totalSkills]);
 
     return (
-        <div
-            ref={ref}
-            className="text-5xl font-bold text-white md:text-7xl"
-        >
+        <div ref={ref} className="text-5xl font-bold text-white md:text-7xl">
             {display}+
         </div>
     );
@@ -72,10 +67,7 @@ export default function Skills() {
     const skills = skillCategories[activeTab];
 
     return (
-        <section
-            id="skills"
-            className="relative py-24"
-        >
+        <section id="skills" className="relative py-24">
             <div className="mx-auto max-w-7xl px-6">
                 {/* Header */}
                 <div className="mx-auto max-w-3xl text-center">
@@ -88,57 +80,65 @@ export default function Skills() {
                     </h2>
 
                     <p className="mt-4 text-slate-400">
-                        A modern technology stack used to design, build, and maintain scalable SaaS platforms, business applications,
-                        e-commerce systems, and production software.
-
+                        A modern technology stack used to design, build, and maintain
+                        scalable SaaS platforms, business applications, e-commerce
+                        systems, and production software.
                     </p>
 
                     <div className="mt-10">
                         <TechCounter />
 
                         <p className="mt-2 text-slate-400">
-                            Technologies Across SaaS, E-Commerce &
-                            Business Systems
+                            Technologies Across SaaS, E-Commerce &amp; Business Systems
                         </p>
 
                         <div className="mx-auto mt-8 h-px w-32 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                     </div>
                 </div>
 
-                {/* Tabs */}
-                <div className="mt-12 flex flex-wrap justify-center gap-3">
-                    {tabs.map((tab) => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`relative overflow-hidden rounded-full border px-5 py-2 text-sm transition-all ${activeTab === tab.id
-                                ? "border-primary"
-                                : "border-white/10"
-                                }`}
-                        >
-                            {activeTab === tab.id && (
-                                <motion.div
-                                    layoutId="active-skill-tab"
-                                    className="absolute inset-0 rounded-full bg-primary"
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 350,
-                                        damping: 30,
-                                    }}
-                                />
-                            )}
+                {/* Tabs — horizontally scrollable strip on mobile, centered wrap from sm up */}
+                <div className="relative mt-12 -mx-6 sm:mx-0">
+                    <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-background to-transparent sm:hidden" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-background to-transparent sm:hidden" />
 
-                            <span
-                                className={`relative z-10 transition-colors ${activeTab === tab.id
-                                    ? "text-white"
-                                    : "text-slate-300"
+                    <div
+                        className="flex gap-2 overflow-x-auto px-6 pb-1
+                        [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden
+                        sm:flex-wrap sm:justify-center sm:gap-3 sm:overflow-visible sm:px-0 sm:pb-0"
+                    >
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab.id}
+                                type="button"
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`relative shrink-0 overflow-hidden whitespace-nowrap rounded-full border px-5 py-2 text-sm transition-all ${activeTab === tab.id
+                                        ? "border-primary"
+                                        : "border-white/10"
                                     }`}
                             >
-                                {tab.label} (
-                                {skillCategories[tab.id].length})
-                            </span>
-                        </button>
-                    ))}
+                                {activeTab === tab.id && (
+                                    <motion.div
+                                        layoutId="active-skill-tab"
+                                        className="absolute inset-0 rounded-full bg-primary"
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 350,
+                                            damping: 30,
+                                        }}
+                                    />
+                                )}
+
+                                <span
+                                    className={`relative z-10 transition-colors ${activeTab === tab.id
+                                            ? "text-white"
+                                            : "text-slate-300"
+                                        }`}
+                                >
+                                    {tab.label} ({skillCategories[tab.id].length})
+                                </span>
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Cards */}
@@ -160,7 +160,15 @@ export default function Skills() {
                                     whileHover={{ y: -6 }}
                                     className="group rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all hover:border-primary/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.15)]"
                                 >
-                                    <Icon className="h-10 w-10 text-primary transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:drop-shadow-[0_0_15px_rgba(124,58,237,0.5)]" />
+                                    <div className="flex items-start justify-between gap-3">
+                                        <div className="inline-flex rounded-2xl bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                            <Icon className="h-6 w-6 text-primary transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(124,58,237,0.5)]" />
+                                        </div>
+
+                                        <span className="inline-flex shrink-0 whitespace-nowrap rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400">
+                                            Production Experience
+                                        </span>
+                                    </div>
 
                                     <h3 className="mt-4 text-xl font-semibold text-white">
                                         {skill.name}
@@ -169,10 +177,6 @@ export default function Skills() {
                                     <p className="mt-3 text-sm leading-6 text-slate-400">
                                         {skill.description}
                                     </p>
-
-                                    <div className="mt-4 inline-flex rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400">
-                                        Production Experience
-                                    </div>
 
                                     <div className="mt-5 border-t border-white/10 pt-4">
                                         <p className="text-xs uppercase tracking-wider text-slate-500">
@@ -198,4 +202,4 @@ export default function Skills() {
             </div>
         </section>
     );
-}   
+}

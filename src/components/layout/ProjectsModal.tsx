@@ -1,9 +1,16 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
+    AlertTriangle,
     CheckCircle2,
+    Cpu,
     ExternalLink,
+    Layers,
+    Lightbulb,
+    Sparkles,
+    TrendingUp,
     X,
 } from "lucide-react";
 
@@ -39,189 +46,266 @@ export default function ProjectsModal({
     project,
     onClose,
 }: ProjectsModalProps) {
+    const prefersReducedMotion = useReducedMotion();
+    const hasLinks = Boolean(project?.liveUrl || project?.githubUrl);
+
+    // Close on Escape, and stop the page behind the modal from scrolling.
+    useEffect(() => {
+        if (!project) return;
+
+        const handleKeyDown = (event: KeyboardEvent) => {
+            if (event.key === "Escape") onClose();
+        };
+
+        const originalOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        document.addEventListener("keydown", handleKeyDown);
+
+        return () => {
+            document.body.style.overflow = originalOverflow;
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [project, onClose]);
+
     return (
         <AnimatePresence>
             {project && (
-                <>
+                <motion.div
+                    key="projects-modal-overlay"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    onClick={onClose}
+                    className="fixed inset-0 z-50 flex flex-col bg-black/70 backdrop-blur-md sm:items-center sm:justify-center sm:p-6 lg:p-10"
+                >
                     <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={onClose}
-                        className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md"
-                    />
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-50 overflow-y-auto p-6"
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="projects-modal-title"
+                        initial={
+                            prefersReducedMotion
+                                ? { opacity: 0 }
+                                : { opacity: 0, y: 24, scale: 0.97 }
+                        }
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={
+                            prefersReducedMotion
+                                ? { opacity: 0 }
+                                : { opacity: 0, y: 12, scale: 0.98 }
+                        }
+                        transition={{ duration: prefersReducedMotion ? 0.01 : 0.25, ease: "easeOut" }}
+                        onClick={(event) => event.stopPropagation()}
+                        className="relative flex h-full w-full flex-col overflow-hidden bg-background sm:h-auto sm:max-h-[85vh] sm:max-w-4xl sm:rounded-3xl sm:border sm:border-white/10 lg:max-w-6xl"
                     >
-                        <div className="mx-auto max-w-6xl rounded-3xl border border-white/10 bg-background p-8 backdrop-blur-xl">
-                            <div className="flex items-start justify-between gap-6">
-                                <div>
-                                    <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
-                                        {project.status}
-                                    </span>
+                        {/* Header — fixed in place, never scrolls out of view */}
+                        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-white/10 px-5 py-5 sm:px-8 sm:py-6">
+                            <div className="min-w-0">
+                                <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                                    <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                                    {project.status}
+                                </span>
 
-                                    <h3 className="mt-4 text-4xl font-bold text-white">
-                                        {project.name}
-                                    </h3>
+                                <h3
+                                    id="projects-modal-title"
+                                    className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl"
+                                >
+                                    {project.name}
+                                </h3>
 
-                                    <p className="mt-2 text-slate-400">
-                                        {project.type}
-                                    </p>
-
-                                    <p className="mt-6 text-lg leading-8 text-slate-300">
-                                        {project.summary}
-                                    </p>
-                                </div>
-
-                                <div className="flex items-center gap-3">
-                                    {project.liveUrl && (
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 whitespace-nowrap rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition hover:opacity-90"                                        >
-                                            <ExternalLink className="h-4 w-4" />
-                                            Live Demo
-                                        </a>
-                                    )}
-
-                                    {project.githubUrl && (
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
-                                        >
-                                            <SiGithub className="h-4 w-4" />
-                                            GitHub
-                                        </a>
-                                    )}
-
-                                    <button
-                                        onClick={onClose}
-                                        className="rounded-xl border border-white/10 p-2 transition-colors hover:bg-white/5"
-                                    >
-                                        <X className="h-5 w-5" />
-                                    </button>
-                                </div>
+                                <p className="mt-1 text-sm text-slate-400">{project.type}</p>
                             </div>
 
-                            <div className="mt-8 space-y-8">
-                                {/* Challenge */}
-                                <div>
-                                    <h4 className="text-xl font-semibold text-white">
-                                        Challenge
-                                    </h4>
+                            <div className="flex shrink-0 items-center gap-3">
+                                {/* On large screens the CTAs live here. Below that, they move to a footer bar. */}
+                                {project.liveUrl && (
+                                    <a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hidden items-center gap-2 whitespace-nowrap rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition hover:opacity-90 lg:inline-flex"
+                                    >
+                                        <ExternalLink className="h-4 w-4" />
+                                        Live Demo
+                                    </a>
+                                )}
 
-                                    <p className="mt-2 leading-7 text-slate-400">
-                                        {project.challenge}
-                                    </p>
-                                </div>
+                                {project.githubUrl && (
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 lg:inline-flex"
+                                    >
+                                        <SiGithub className="h-4 w-4" />
+                                        GitHub
+                                    </a>
+                                )}
 
-                                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                                <button
+                                    type="button"
+                                    onClick={onClose}
+                                    aria-label="Close project details"
+                                    className="rounded-xl border border-white/10 p-2 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                                >
+                                    <X className="h-5 w-5" />
+                                </button>
+                            </div>
+                        </div>
 
-                                {/* Solution */}
-                                <div>
-                                    <h4 className="text-xl font-semibold text-white">
-                                        Solution
-                                    </h4>
+                        {/* Body — the only part that scrolls */}
+                        <div className="min-h-0 flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 scrollbar-none">
+                            <p className="text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+                                {project.summary}
+                            </p>
 
-                                    <p className="mt-2 leading-7 text-slate-400">
-                                        {project.solution}
-                                    </p>
-                                </div>
-
-                                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                                {/* Features */}
-                                <div>
-                                    <h4 className="text-xl font-semibold text-white">
-                                        Key Features
-                                    </h4>
-
-                                    <div className="mt-4 grid gap-3 md:grid-cols-2">
-                                        {project.features.map((feature) => (
-                                            <div
-                                                key={feature}
-                                                className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
-                                            >
-                                                <CheckCircle2 className="h-4 w-4 text-primary" />
-
-                                                <span className="text-slate-300">
-                                                    {feature}
-                                                </span>
+                            <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_240px]">
+                                {/* Main story column */}
+                                <div className="space-y-8">
+                                    {/* Challenge + Solution, paired side-by-side once there's room */}
+                                    <div className="grid gap-6 sm:grid-cols-2">
+                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                            <div className="flex items-center gap-2">
+                                                <AlertTriangle className="h-4 w-4 text-primary" />
+                                                <h4 className="text-base font-semibold text-white">
+                                                    Challenge
+                                                </h4>
                                             </div>
-                                        ))}
+                                            <p className="mt-3 leading-7 text-slate-400">
+                                                {project.challenge}
+                                            </p>
+                                        </div>
+
+                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                            <div className="flex items-center gap-2">
+                                                <Lightbulb className="h-4 w-4 text-primary" />
+                                                <h4 className="text-base font-semibold text-white">
+                                                    Solution
+                                                </h4>
+                                            </div>
+                                            <p className="mt-3 leading-7 text-slate-400">
+                                                {project.solution}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                                    {/* Features */}
+                                    <div>
+                                        <div className="flex items-center gap-2">
+                                            <Sparkles className="h-4 w-4 text-primary" />
+                                            <h4 className="text-base font-semibold text-white">
+                                                Key Features
+                                            </h4>
+                                        </div>
 
-                                {/* Technical Highlights */}
-                                <div>
-                                    <h4 className="text-xl font-semibold text-white">
-                                        Technical Highlights
-                                    </h4>
+                                        <div className="mt-4 grid gap-3 md:grid-cols-2">
+                                            {project.features.map((feature) => (
+                                                <div
+                                                    key={feature}
+                                                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                                                >
+                                                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                                                    <span className="text-sm leading-6 text-slate-300">
+                                                        {feature}
+                                                    </span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
 
-                                    <div className="mt-4 grid gap-3 md:grid-cols-2">
-                                        {project.technicalHighlights.map(
-                                            (highlight) => (
+                                    {/* Technical Highlights */}
+                                    <div>
+                                        <div className="flex items-center gap-2">
+                                            <Cpu className="h-4 w-4 text-primary" />
+                                            <h4 className="text-base font-semibold text-white">
+                                                Technical Highlights
+                                            </h4>
+                                        </div>
+
+                                        <div className="mt-4 grid gap-3 md:grid-cols-2">
+                                            {project.technicalHighlights.map((highlight) => (
                                                 <div
                                                     key={highlight}
-                                                    className="flex items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                                                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
                                                 >
-                                                    <CheckCircle2 className="h-4 w-4 text-primary" />
-
-                                                    <span className="text-slate-300">
+                                                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                                                    <span className="text-sm leading-6 text-slate-300">
                                                         {highlight}
                                                     </span>
                                                 </div>
-                                            )
-                                        )}
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* Impact — pulled out as the closing takeaway */}
+                                    <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
+                                        <div className="flex items-center gap-2">
+                                            <TrendingUp className="h-4 w-4 text-primary" />
+                                            <h4 className="text-base font-semibold text-white">
+                                                Impact
+                                            </h4>
+                                        </div>
+                                        <p className="mt-3 leading-7 text-slate-300">
+                                            {project.impact}
+                                        </p>
                                     </div>
                                 </div>
 
-                                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+                                {/* Sidebar — tech stack sits beside the story once there's room for it */}
+                                <div className="lg:sticky lg:top-0 lg:self-start">
+                                    <div className="flex items-center gap-2">
+                                        <Layers className="h-4 w-4 text-primary" />
+                                        <h4 className="text-base font-semibold text-white">
+                                            Technology Stack
+                                        </h4>
+                                    </div>
 
-                                {/* Tech Stack */}
-                                <div>
-                                    <h4 className="text-xl font-semibold text-white">
-                                        Technology Stack
-                                    </h4>
-
-                                    <div className="mt-4 flex flex-wrap gap-2">
+                                    <div className="mt-4 flex flex-wrap gap-2 lg:flex-col lg:items-stretch">
                                         {project.tech.map((tech) => (
                                             <span
                                                 key={tech}
-                                                className="rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm text-primary"
+                                                className="rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-center text-sm text-primary lg:rounded-xl"
                                             >
                                                 {tech}
                                             </span>
                                         ))}
                                     </div>
                                 </div>
-
-                                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-
-                                {/* Impact */}
-                                <div>
-                                    <h4 className="text-xl font-semibold text-white">
-                                        Impact
-                                    </h4>
-
-                                    <p className="mt-2 leading-7 text-slate-400">
-                                        {project.impact}
-                                    </p>
-                                </div>
                             </div>
                         </div>
+
+                        {/* Footer CTA bar — mobile & tablet only; desktop keeps the links up in the header */}
+                        {hasLinks && (
+                            <div className="grid shrink-0 grid-cols-2 gap-3 border-t border-white/10 px-5 py-4 sm:px-8 lg:hidden">
+                                {project.liveUrl && (
+                                    <a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-white transition hover:opacity-90 ${project.githubUrl ? "" : "col-span-2"
+                                            }`}
+                                    >
+                                        <ExternalLink className="h-4 w-4" />
+                                        Live Demo
+                                    </a>
+                                )}
+
+                                {project.githubUrl && (
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className={`inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 ${project.liveUrl ? "" : "col-span-2"
+                                            }`}
+                                    >
+                                        <SiGithub className="h-4 w-4" />
+                                        GitHub
+                                    </a>
+                                )}
+                            </div>
+                        )}
                     </motion.div>
-                </>
+                </motion.div>
             )}
         </AnimatePresence>
     );

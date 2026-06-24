@@ -49,7 +49,7 @@ export default function Projects() {
                                     {project.status}
                                 </span>
 
-                                <h3 className="mt-4 text-2xl font-bold text-white">
+                                <h3 className="mt-4 text-xl lg:text-2xl font-bold text-white">
                                     {project.name}
                                 </h3>
 

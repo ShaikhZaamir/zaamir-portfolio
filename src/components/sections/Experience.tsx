@@ -4,6 +4,7 @@ import { AnimatePresence, motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import { experiences } from "@/lib/experience";
+import ExperienceMobile from "./ExperienceMobile";
 
 export default function Experience() {
     const [selectedExperience, setSelectedExperience] =
@@ -132,56 +133,11 @@ export default function Experience() {
                     </div>
                 </div>
 
-                {/* Mobile Timeline */}
-                <div className="mt-16 space-y-6 lg:hidden">
-                    {experiences.map((experience) => {
-                        const Icon = experience.icon;
-
-                        const isActive =
-                            selectedExperience.title ===
-                            experience.title;
-
-                        return (
-                            <button
-                                key={`${experience.company}-${experience.title}`}
-                                onClick={() =>
-                                    setSelectedExperience(experience)
-                                }
-                                className="flex w-full gap-4 text-left"
-                            >
-                                <div
-                                    className={`flex h-10 w-10 items-center justify-center rounded-full border transition-all ${isActive
-                                        ? experience.badgeColor === "emerald"
-                                            ? "border-emerald-500 bg-emerald-500/20 text-emerald-400"
-                                            : experience.badgeColor === "cyan"
-                                                ? "border-cyan-500 bg-cyan-500/20 text-cyan-400"
-                                                : "border-amber-500 bg-amber-500/20 text-amber-400"
-                                        : "border-white/10 bg-white/5 text-slate-300"
-                                        }`}
-                                >
-                                    <Icon className="h-4 w-4" />
-                                </div>
-
-                                <div>
-                                    <p className="text-sm text-slate-500">
-                                        {experience.year}
-                                    </p>
-
-                                    <h3 className="font-medium text-white">
-                                        {experience.title}
-                                    </h3>
-
-                                    <p className="text-sm text-slate-400">
-                                        {experience.company}
-                                    </p>
-                                </div>
-                            </button>
-                        );
-                    })}
-                </div>
+                {/* Mobile Timeline  */}
+                <ExperienceMobile />
 
                 {/* Experience Card */}
-                <div className="mx-auto mt-16 max-w-5xl">
+                <div className="hidden lg:block mx-auto mt-16 max-w-5xl">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={selectedExperience.title}

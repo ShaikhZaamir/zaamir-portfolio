@@ -117,18 +117,18 @@ export default function Hero() {
                     </p>
 
                     {/* Heading */}
-                    <h1 className="mt-10 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-2xl md:text-4xl lg:text-5xl">
+                    <h1 className="mt-6 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-2xl md:text-4xl lg:text-5xl">
                         Building Modern Software
                         <br />
                         For Businesses & Startups
                     </h1>
 
-                    <p className="mx-auto mt-8 max-w-3xl text-md leading-6 text-slate-400 sm:text-base sm:leading-7 px-5">
+                    <p className="mx-auto mt-14 max-w-3xl text-md leading-6 text-slate-400 sm:text-base sm:leading-7 px-5">
                         I build scalable SaaS platforms, business applications, e-commerce systems, and digital products that solve real-world problems and deliver measurable value to businesses and users.
                     </p>
 
                     {/* CTA */}
-                    <div className="mt-10 flex flex-wrap justify-center gap-3">
+                    <div className="mt-6 flex flex-wrap justify-center gap-3">
                         <Button
                             size="lg"
                             className="rounded-full px-6"
@@ -156,7 +156,7 @@ export default function Hero() {
                     </div>
 
                     {/* Stats */}
-                    <div className="mt-10 w-full grid grid-cols-2 gap-4 lg:grid-cols-4 px-5">
+                    <div className="mt-14 w-full grid grid-cols-2 gap-4 lg:grid-cols-4 px-5">
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}

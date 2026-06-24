@@ -165,8 +165,7 @@ export default function Navbar() {
 
                         <SheetContent
                             side="right"
-                            className="w-[85%] max-w-[320px] border-white/10 bg-[#050816]"
-                        >
+                            className="min-w-full px-8 bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-md border border-white/10 "                        >
                             <div className="mt-14 px-2 flex flex-col">
                                 <div className="mb-8">
                                     <p className="text-xs tracking-[0.3em] text-slate-500">
@@ -190,9 +189,12 @@ export default function Navbar() {
                                     onClick={() => {
                                         setOpen(false);
                                         window.open(LINKS.RESUME, "_blank");
-                                    }} className="mt-4 rounded-full"
+                                    }}
+                                    className="w-fit my-5 lg:flex rounded-full px-3 bg-violet-600 hover:bg-violet-500 transition-all duration-200"
                                 >
+                                    <FileText className="mr-2 h-4 w-4" />
                                     Resume
+                                    <ArrowUpRight className="ml-2 h-4 w-4" />
                                 </Button>
                             </div>
                         </SheetContent>
