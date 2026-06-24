@@ -23,11 +23,20 @@ const navItems = [
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState("");
+    const [open, setOpen] = useState(false);
 
     const scrollToSection = (id: string) => {
         document.getElementById(id)?.scrollIntoView({
             behavior: "smooth",
         });
+    };
+
+    const handleMobileNavigation = (id: string) => {
+        setOpen(false);
+
+        setTimeout(() => {
+            scrollToSection(id);
+        }, 250);
     };
 
     useEffect(() => {
@@ -84,9 +93,9 @@ export default function Navbar() {
             transition={{ duration: 0.4 }}
             className="fixed inset-x-0 top-0 z-50"
         >
-            <div className="mx-auto max-w-5xl px-6 pb-2 pt-1">
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 pb-2 pt-2">
                 <div
-                    className={`relative flex items-center justify-between rounded-full px-6 py-2 transition-all duration-300 ${scrolled
+                    className={`relative flex items-center justify-between rounded-full px-4 sm:px-6 py-2 transition-all duration-300 ${scrolled
                         ? "border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
                         : "bg-transparent"
                         }`}
@@ -99,7 +108,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <button
                         onClick={() => scrollToSection("hero")}
-                        className="relative z-10 font-heading text-sm font-bold tracking-[0.3em] text-white transition-opacity hover:opacity-80"
+                        className="relative z-10 font-heading text-sm font-bold tracking-[0.2em] sm:tracking-[0.3em] text-white transition-opacity hover:opacity-80"
                     >
                         ZAAMIR
                     </button>
@@ -135,7 +144,7 @@ export default function Navbar() {
                     {/* Resume CTA */}
                     <Button
                         onClick={() => window.open(LINKS.RESUME, "_blank")}
-                        className="rounded-full px-3 bg-violet-600 hover:bg-violet-500 transition-all duration-200"
+                        className="hidden lg:flex rounded-full px-3 bg-violet-600 hover:bg-violet-500 transition-all duration-200"
                     >
                         <FileText className="mr-2 h-4 w-4" />
                         Resume
@@ -143,7 +152,7 @@ export default function Navbar() {
                     </Button>
 
                     {/* Mobile Menu */}
-                    <Sheet>
+                    <Sheet open={open} onOpenChange={setOpen}>
                         <SheetTrigger asChild>
                             <Button
                                 variant="ghost"
@@ -156,14 +165,19 @@ export default function Navbar() {
 
                         <SheetContent
                             side="right"
-                            className="border-white/10 bg-[#050816]"
+                            className="w-[85%] max-w-[320px] border-white/10 bg-[#050816]"
                         >
-                            <div className="mt-12 flex flex-col gap-6">
+                            <div className="mt-14 px-2 flex flex-col">
+                                <div className="mb-8">
+                                    <p className="text-xs tracking-[0.3em] text-slate-500">
+                                        NAVIGATION
+                                    </p>
+                                </div>
                                 {navItems.map((item) => (
                                     <button
                                         key={item.label}
-                                        onClick={() => scrollToSection(item.id)}
-                                        className={`text-left text-lg transition-colors ${activeSection === item.id
+                                        onClick={() => handleMobileNavigation(item.id)}
+                                        className={`text-left py-3 text-base font-medium transition-colors ${activeSection === item.id
                                             ? "text-white"
                                             : "text-slate-300 hover:text-white"
                                             }`}
@@ -173,8 +187,10 @@ export default function Navbar() {
                                 ))}
 
                                 <Button
-                                    onClick={() => alert("clicked")}
-                                    className="mt-4 rounded-full"
+                                    onClick={() => {
+                                        setOpen(false);
+                                        window.open(LINKS.RESUME, "_blank");
+                                    }} className="mt-4 rounded-full"
                                 >
                                     Resume
                                 </Button>

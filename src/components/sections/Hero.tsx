@@ -72,7 +72,6 @@ function AnimatedNumber({
     const ref = useRef(null);
     const isInView = useInView(ref, {
         once: true,
-        margin: "-100px",
     });
 
     const [displayValue, setDisplayValue] = useState(0);
@@ -113,29 +112,23 @@ export default function Hero() {
             <div className="mx-auto">
                 <div className="mx-auto max-w-4xl text-center">
                     {/* Eyebrow */}
-                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-                        Software Developer | Full Stack Developer
+                    <p className="text-xs sm:text-md font-semibold uppercase tracking-[0.15em] text-primary">
+                        Software Developer • Full Stack Developer
                     </p>
 
                     {/* Heading */}
-                    <h1 className="mt-4 font-heading text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl">
-                        Full-Stack Developer Building Scalable
+                    <h1 className="mt-10 font-heading text-3xl font-bold leading-tight tracking-tight sm:text-2xl md:text-4xl lg:text-5xl">
+                        Building Modern Software
                         <br />
-                        SaaS Platforms, Business Systems &
-                        <br />
-                        Digital Products
+                        For Businesses & Startups
                     </h1>
 
-                    {/* Description */}
-                    <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-slate-400">
-                        I'm a Software Developer specializing in full-stack development, building production-ready
-                        SaaS platforms, business applications, e-commerce systems, and AI-powered solutions. I focus
-                        on creating scalable, user-centric software using modern technologies including <br />
-                        React, Next.js, TypeScript, Node.js, PostgreSQL, and Python.
+                    <p className="mx-auto mt-8 max-w-3xl text-md leading-6 text-slate-400 sm:text-base sm:leading-7 px-5">
+                        I build scalable SaaS platforms, business applications, e-commerce systems, and digital products that solve real-world problems and deliver measurable value to businesses and users.
                     </p>
 
                     {/* CTA */}
-                    <div className="mt-8 flex flex-wrap justify-center gap-3">
+                    <div className="mt-10 flex flex-wrap justify-center gap-3">
                         <Button
                             size="lg"
                             className="rounded-full px-6"
@@ -163,21 +156,21 @@ export default function Hero() {
                     </div>
 
                     {/* Stats */}
-                    <div className="mt-10 w-full grid grid-cols-2 gap-4 lg:grid-cols-4">
+                    <div className="mt-10 w-full grid grid-cols-2 gap-4 lg:grid-cols-4 px-5">
                         {stats.map((stat) => (
                             <div
                                 key={stat.label}
-                                className=" rounded-2xl  border border-white/10 bg-white/[0.03] p-5 text-center backdrop-blur-xl "
+                                className=" rounded-2xl  border border-white/10 bg-white/[0.03] p-4 text-center backdrop-blur-xl "
                             >
                                 <div className="flex items-end justify-center gap-1">
-                                    <span className="bg-gradient-to-r from-white to-slate-300 bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+                                    <span className="bg-gradient-to-r from-white to-slate-300 bg-clip-text text-3xl sm:text-4xl font-bold text-transparent md:text-5xl">
                                         <AnimatedNumber
                                             value={stat.value}
                                             decimals={stat.decimals}
                                         />
                                     </span>
 
-                                    <span className="text-4xl font-bold text-primary">
+                                    <span className="text-3xl sm:text-4xl font-bold text-primary">
                                         {stat.suffix}
                                     </span>
 
@@ -188,7 +181,7 @@ export default function Hero() {
                                     )}
                                 </div>
 
-                                <p className="mt-2 text-sm text-slate-300">
+                                <p className="mt-2 text-xs sm:text-sm text-slate-300">
                                     {stat.label}
                                 </p>
                             </div>
