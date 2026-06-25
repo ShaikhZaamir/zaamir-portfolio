@@ -1,18 +1,30 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+
 import { cn } from "@/lib/utils";
 import { PersonSchema } from "@/components/seo/person-schema";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+  preload: true,
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+  display: "swap",
+  preload: true,
 });
+
+export const viewport: Viewport = {
+  themeColor: "#050816",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://zaamir.vercel.app"),
@@ -23,29 +35,35 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Full Stack Developer building SaaS platforms, business applications, and digital products using Next.js, React, TypeScript, Node.js, PostgreSQL, and modern web technologies.",
+    "Full Stack Developer specializing in scalable SaaS platforms, business applications, AI-powered solutions, e-commerce systems, and modern web experiences using Next.js, React, TypeScript, Node.js, PostgreSQL, and cloud technologies.",
 
   keywords: [
     "Zaamir Shaikh",
     "Software Developer",
+    "Software Engineer",
     "Full Stack Developer",
-    "Junior Software Developer",
     "React Developer",
     "Next.js Developer",
     "TypeScript Developer",
+    "JavaScript Developer",
     "Node.js Developer",
     "Frontend Developer",
     "Backend Developer",
     "Web Developer",
     "SaaS Developer",
+    "AI Developer",
     "E-Commerce Developer",
     "Portfolio",
     "Mumbai Developer",
+    "PostgreSQL",
+    "MongoDB",
+    "Tailwind CSS",
   ],
 
   authors: [
     {
       name: "Zaamir Shaikh",
+      url: "https://zaamir.vercel.app",
     },
   ],
 
@@ -53,9 +71,28 @@ export const metadata: Metadata = {
 
   publisher: "Zaamir Shaikh",
 
+  applicationName: "Zaamir Portfolio",
+
+  category: "technology",
+
+  referrer: "origin-when-cross-origin",
+
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
+  },
+
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 
   alternates: {
@@ -65,7 +102,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Zaamir Shaikh | Full Stack Developer",
     description:
-      "Building SaaS Platforms, Business Applications, and Digital Products with modern web technologies.",
+      "Building scalable SaaS platforms, business applications, AI-powered solutions, and modern digital products using Next.js, React, TypeScript, and Node.js.",
     url: "https://zaamir.vercel.app",
     siteName: "Zaamir Shaikh Portfolio",
     locale: "en_US",
@@ -73,7 +110,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/og-image.png",
+        url: "https://zaamir.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Zaamir Shaikh Portfolio",
@@ -85,8 +122,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zaamir Shaikh | Full Stack Developer",
     description:
-      "Building SaaS Platforms, Business Applications, and Digital Products with modern web technologies.",
-    images: ["/og-image.png"],
+      "Building scalable SaaS platforms, business applications, AI-powered solutions, and modern digital products.",
+    images: ["https://zaamir.vercel.app/og-image.png"],
   },
 };
 
@@ -98,6 +135,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         "h-full",
         "antialiased",
@@ -106,7 +144,17 @@ export default function RootLayout({
         spaceGrotesk.variable
       )}
     >
-      <body className="min-h-full flex flex-col">
+      <body
+        className={cn(
+          "min-h-screen",
+          "flex",
+          "flex-col",
+          "bg-background",
+          "text-foreground",
+          "selection:bg-primary",
+          "selection:text-white"
+        )}
+      >
         <PersonSchema />
         {children}
       </body>

@@ -2,17 +2,33 @@ export function PersonSchema() {
     const schema = {
         "@context": "https://schema.org",
         "@type": "Person",
-        name: "Zaamir Shaikh",
-        url: "https://zaamir.vercel.app",
-        image: "https://zaamir.vercel.app/og-image.png",
-        jobTitle: "Full Stack Developer",
-        description:
-            "Full Stack Developer building SaaS platforms, business applications, and digital products using modern web technologies.",
 
-        sameAs: [
-            "https://github.com/ShaikhZaamir",
-            "https://www.linkedin.com/in/shaikh-zaamir/",
-        ],
+        "@id": "https://zaamir.vercel.app/#person",
+
+        name: "Zaamir Shaikh",
+
+        givenName: "Zaamir",
+
+        familyName: "Shaikh",
+
+        url: "https://zaamir.vercel.app",
+
+        image: "https://zaamir.vercel.app/og-image.png",
+
+        jobTitle: "Full Stack Developer",
+
+        description:
+            "Full Stack Developer specializing in scalable SaaS platforms, business applications, e-commerce systems, and modern web applications using Next.js, React, TypeScript, Node.js, and PostgreSQL.",
+
+        nationality: {
+            "@type": "Country",
+            name: "India",
+        },
+
+        worksFor: {
+            "@type": "Organization",
+            name: "Freelance",
+        },
 
         alumniOf: [
             {
@@ -26,16 +42,28 @@ export function PersonSchema() {
         ],
 
         knowsAbout: [
+            "Full Stack Development",
+            "Software Engineering",
             "Next.js",
             "React",
             "TypeScript",
+            "JavaScript",
             "Node.js",
+            "Express.js",
             "PostgreSQL",
-            "Full Stack Development",
+            "MongoDB",
+            "Tailwind CSS",
+            "REST APIs",
             "SaaS Development",
             "E-Commerce Development",
             "Web Development",
-            "Software Engineering",
+            "Responsive Design",
+            "Cloud Deployment",
+        ],
+
+        sameAs: [
+            "https://github.com/ShaikhZaamir",
+            "https://www.linkedin.com/in/shaikh-zaamir/",
         ],
     };
 

@@ -1,14 +1,16 @@
 import { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = "https://zaamir.vercel.app";
+const BASE_URL = "https://zaamir.vercel.app";
 
-    return [
-        {
-            url: baseUrl,
-            lastModified: new Date(),
-            changeFrequency: "weekly",
-            priority: 1,
-        },
-    ];
+export default function sitemap(): MetadataRoute.Sitemap {
+  const currentDate = new Date();
+
+  return [
+    {
+      url: BASE_URL,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 1,
+    },
+  ];
 }
