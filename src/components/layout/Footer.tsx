@@ -45,6 +45,7 @@ export default function Footer() {
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
                             </span>
                             Open to Opportunities
+                            
                         </div>
                     </div>
 

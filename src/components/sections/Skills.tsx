@@ -149,54 +149,130 @@ export default function Skills() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -15 }}
                         transition={{ duration: 0.25 }}
-                        className="mt-6 grid gap-x-6 gap-y-4 md:grid-cols-2 xl:grid-cols-3"
+                        className="mt-6"
                     >
-                        {skills.map((skill) => {
-                            const Icon = skill.icon;
+                        {/* Mobile Slider */}
+                        <div
+                            className="
+                flex gap-4 overflow-x-auto pb-4 md:hidden
+                snap-x snap-mandatory
+                [-ms-overflow-style:none]
+                [scrollbar-width:none]
+                [&::-webkit-scrollbar]:hidden
+            "
+                        >
+                            {skills.map((skill) => {
+                                const Icon = skill.icon;
 
-                            return (
-                                <motion.div
-                                    key={skill.name}
-                                    whileHover={{ y: -6 }}
-                                    className="group rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all hover:border-primary/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.15)]"
-                                >
-                                    <div className="flex items-start justify-between gap-3">
-                                        <div className="inline-flex rounded-2xl bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
-                                            <Icon className="h-6 w-6 text-primary transition-all duration-300 group-hover:drop-shadow-[0_0_15px_rgba(124,58,237,0.5)]" />
+                                return (
+                                    <motion.div
+                                        key={skill.name}
+                                        whileHover={{ y: -6 }}
+                                        className="
+                            group
+                            min-w-[85%]
+                            max-w-[85%]
+                            shrink-0
+                            snap-center
+                            rounded-3xl
+                            border
+                            border-white/10
+                            bg-white/5
+                            p-4
+                            backdrop-blur-xl
+                            transition-all
+                            hover:border-primary/40
+                            hover:shadow-[0_0_40px_rgba(124,58,237,0.15)]
+                        "
+                                    >
+                                        <div className="flex items-start justify-between gap-3">
+                                            <div className="inline-flex rounded-2xl bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                                <Icon className="h-6 w-6 text-primary" />
+                                            </div>
+
+                                            <span className="inline-flex shrink-0 whitespace-nowrap rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400">
+                                                Production Experience
+                                            </span>
                                         </div>
 
-                                        <span className="inline-flex shrink-0 whitespace-nowrap rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400">
-                                            Production Experience
-                                        </span>
-                                    </div>
+                                        <h3 className="mt-4 text-xl font-semibold text-white">
+                                            {skill.name}
+                                        </h3>
 
-                                    <h3 className="mt-4 text-xl font-semibold text-white">
-                                        {skill.name}
-                                    </h3>
-
-                                    <p className="mt-3 text-sm leading-6 text-slate-400">
-                                        {skill.description}
-                                    </p>
-
-                                    <div className="mt-5 border-t border-white/10 pt-4">
-                                        <p className="text-xs uppercase tracking-wider text-slate-500">
-                                            Used In
+                                        <p className="mt-3 text-sm leading-6 text-slate-400">
+                                            {skill.description}
                                         </p>
 
-                                        <div className="mt-3 flex flex-wrap gap-2">
-                                            {skill.usedIn.map((item) => (
-                                                <span
-                                                    key={item}
-                                                    className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300"
-                                                >
-                                                    {item}
-                                                </span>
-                                            ))}
+                                        <div className="mt-5 border-t border-white/10 pt-4">
+                                            <p className="text-xs uppercase tracking-wider text-slate-500">
+                                                Used In
+                                            </p>
+
+                                            <div className="mt-3 flex flex-wrap gap-1">
+                                                {skill.usedIn.map((item) => (
+                                                    <span
+                                                        key={item}
+                                                        className="rounded-full border border-white/10 px-2 py-1 text-xs text-slate-300"
+                                                    >
+                                                        {item}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
+
+                        {/* Desktop Grid */}
+                        <div className="hidden md:grid gap-x-6 gap-y-4 md:grid-cols-2 xl:grid-cols-3">
+                            {skills.map((skill) => {
+                                const Icon = skill.icon;
+
+                                return (
+                                    <motion.div
+                                        key={skill.name}
+                                        whileHover={{ y: -6 }}
+                                        className="group rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-xl transition-all hover:border-primary/40 hover:shadow-[0_0_40px_rgba(124,58,237,0.15)]"
+                                    >
+                                        <div className="flex items-start justify-between gap-3">
+                                            <div className="inline-flex rounded-2xl bg-primary/10 p-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                                <Icon className="h-6 w-6 text-primary" />
+                                            </div>
+
+                                            <span className="inline-flex shrink-0 whitespace-nowrap rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs text-emerald-400">
+                                                Production Experience
+                                            </span>
+                                        </div>
+
+                                        <h3 className="mt-4 text-xl font-semibold text-white">
+                                            {skill.name}
+                                        </h3>
+
+                                        <p className="mt-3 text-sm leading-6 text-slate-400">
+                                            {skill.description}
+                                        </p>
+
+                                        <div className="mt-5 border-t border-white/10 pt-4">
+                                            <p className="text-xs uppercase tracking-wider text-slate-500">
+                                                Used In
+                                            </p>
+
+                                            <div className="mt-3 flex flex-wrap gap-2">
+                                                {skill.usedIn.map((item) => (
+                                                    <span
+                                                        key={item}
+                                                        className="rounded-full border border-white/10 px-3 py-1 text-xs text-slate-300"
+                                                    >
+                                                        {item}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
+                        </div>
                     </motion.div>
                 </AnimatePresence>
             </div>
