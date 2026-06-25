@@ -26,15 +26,17 @@ export default function Footer() {
             <div className="absolute right-1/4 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl" />
 
             <div className="relative mx-auto max-w-7xl px-6 py-16">
-                {/* Main Grid */}
-                <div className="grid gap-12 md:grid-cols-3">
+                {/* Main Grid — Brand sits full-width, Navigation + Socials pair up
+                   side-by-side beneath it even on phones, then settle into the
+                   original three-equal-column row from md up. */}
+                <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-12">
                     {/* Brand */}
-                    <div>
+                    <div className="col-span-2 md:col-span-1">
                         <h3 className="bg-gradient-to-r from-white to-slate-400 bg-clip-text text-xl font-bold tracking-[0.2em] text-transparent">
                             ZAAMIR
                         </h3>
 
-                        <p className="mt-4 max-w-xs leading-7 text-slate-400">
+                        <p className="mt-4 sm:max-w-xs leading-7 text-slate-400">
                             Building SaaS Platforms, Business Applications &
                             AI-Powered Systems.
                         </p>
@@ -45,12 +47,11 @@ export default function Footer() {
                                 <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
                             </span>
                             Open to Opportunities
-                            
                         </div>
                     </div>
 
                     {/* Navigation */}
-                    <div>
+                    <div className="">
                         <h4 className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
                             Navigation
                         </h4>
@@ -126,61 +127,55 @@ export default function Footer() {
                     </div>
                 </div>
 
-                {/* Built With */}
-                <div className="mt-12 border-t border-white/10 pt-8">
-                    <p className="mb-4 text-sm text-slate-500">
-                        Built with
-                    </p>
+                <div className="mt-12 flex flex-wrap items-end justify-between gap-6 border-t border-white/10 pt-8">
+                    <div>
+                        <p className="mb-4 text-sm text-slate-500">
+                            Built with
+                        </p>
 
-                    <div className="flex flex-wrap gap-2">
-                        {[
-                            "Next.js",
-                            "TypeScript",
-                            "Tailwind CSS",
-                            "shadcn/ui",
-                            "Framer Motion",
-                        ].map((tech) => (
-                            <span
-                                key={tech}
-                                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/10"
-                            >
-                                {tech}
-                            </span>
-                        ))}
+                        <div className="flex flex-wrap gap-2">
+                            {[
+                                "Next.js",
+                                "TypeScript",
+                                "Tailwind CSS",
+                                "shadcn/ui",
+                                "Framer Motion",
+                            ].map((tech) => (
+                                <span
+                                    key={tech}
+                                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-primary/10"
+                                >
+                                    {tech}
+                                </span>
+                            ))}
+                        </div>
                     </div>
+
                     <AnimatePresence>
                         {isFooterInView && (
                             <motion.button
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 20 }}
-                                transition={{
-                                    delay: 1,
-                                    duration: 0.3,
-                                }}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
                                 onClick={() =>
                                     window.scrollTo({
                                         top: 0,
                                         behavior: "smooth",
                                     })
                                 }
-                                className="absolute right-0 bottom-5 rounded-full border border-white/10 bg-white/5 p-3 backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-primary/40 hover:bg-primary/10"
+                                className="fixed bottom-15 right-5 z-50 rounded-full border border-white/10 bg-black/60 p-3 backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-primary/40"
                             >
-                                <ArrowUp className="h-4 w-4 text-slate-300" />
+                                <ArrowUp className="h-5 w-5 text-slate-300" />
                             </motion.button>
                         )}
                     </AnimatePresence>
                 </div>
 
-                {/* Bottom Bar */}
-                <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-                    <p>© 2026 Zaamir Shaikh</p>
 
-                    <p>Designed & Built by Zaamir Shaikh</p>
-
-                    <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs text-primary">
-                        Portfolio v2.0
-                    </span>
+                <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-slate-500 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
+                        <p>© 2026 Zaamir Shaikh</p>
+                    </div>
                 </div>
             </div>
         </footer>
