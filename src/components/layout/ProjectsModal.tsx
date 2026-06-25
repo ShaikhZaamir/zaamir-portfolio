@@ -98,7 +98,6 @@ export default function ProjectsModal({
                         onClick={(event) => event.stopPropagation()}
                         className="relative flex h-full w-full flex-col overflow-hidden bg-background sm:h-auto sm:max-h-[85vh] sm:max-w-4xl sm:rounded-3xl sm:border sm:border-white/10 lg:max-w-6xl"
                     >
-                        {/* Header — fixed in place, never scrolls out of view */}
                         <div className="flex shrink-0 items-start justify-between gap-4 border-b border-white/10 px-5 py-5 sm:px-8 sm:py-6">
                             <div className="min-w-0">
                                 <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
@@ -153,7 +152,6 @@ export default function ProjectsModal({
                             </div>
                         </div>
 
-                        {/* Body — the only part that scrolls */}
                         <div className="min-h-0 flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 scrollbar-none">
                             <p className="text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
                                 {project.summary}
@@ -237,7 +235,6 @@ export default function ProjectsModal({
                                         </div>
                                     </div>
 
-                                    {/* Impact — pulled out as the closing takeaway */}
                                     <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
                                         <div className="flex items-center gap-2">
                                             <TrendingUp className="h-4 w-4 text-primary" />
@@ -251,7 +248,6 @@ export default function ProjectsModal({
                                     </div>
                                 </div>
 
-                                {/* Sidebar — tech stack sits beside the story once there's room for it */}
                                 <div className="lg:sticky lg:top-0 lg:self-start">
                                     <div className="flex items-center gap-2">
                                         <Layers className="h-4 w-4 text-primary" />
@@ -274,7 +270,6 @@ export default function ProjectsModal({
                             </div>
                         </div>
 
-                        {/* Footer CTA bar — mobile & tablet only; desktop keeps the links up in the header */}
                         {hasLinks && (
                             <div className="grid shrink-0 grid-cols-2 gap-3 border-t border-white/10 px-5 py-4 sm:px-8 lg:hidden">
                                 {project.liveUrl && (

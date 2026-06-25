@@ -96,7 +96,6 @@ export default function Skills() {
                     </div>
                 </div>
 
-                {/* Tabs — horizontally scrollable strip on mobile, centered wrap from sm up */}
                 <div className="relative mt-12 -mx-6 sm:mx-0">
                     <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-8 bg-gradient-to-r from-background to-transparent sm:hidden" />
                     <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-8 bg-gradient-to-l from-background to-transparent sm:hidden" />

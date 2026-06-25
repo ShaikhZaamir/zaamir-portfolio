@@ -1,4 +1,4 @@
-# Zaamir Shaikh — Portfolio
+# Zaamir Shaikh - Portfolio
 
 A modern, high-performance portfolio built with **Next.js 15**, **React 19**, **TypeScript**, and **Tailwind CSS**. The website showcases my projects, technical skills, experience, and provides an easy way for recruiters, clients, and collaborators to connect with me.
 

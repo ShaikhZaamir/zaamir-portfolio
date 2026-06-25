@@ -300,8 +300,6 @@ export default function Contact() {
                                             </div>
                                         </div>
 
-                                        {/* Message — shorter minimum height on phones, grows back
-                                           to the original size from sm up */}
                                         <div>
                                             <Textarea
                                                 placeholder="Tell me about your project, opportunity, or idea..."

@@ -26,9 +26,6 @@ export default function Footer() {
             <div className="absolute right-1/4 top-0 h-40 w-40 rounded-full bg-cyan-500/10 blur-3xl" />
 
             <div className="relative mx-auto max-w-7xl px-6 py-16">
-                {/* Main Grid — Brand sits full-width, Navigation + Socials pair up
-                   side-by-side beneath it even on phones, then settle into the
-                   original three-equal-column row from md up. */}
                 <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-3 md:gap-12">
                     {/* Brand */}
                     <div className="col-span-2 md:col-span-1">
