@@ -54,7 +54,7 @@ function TechCounter() {
     }, [isInView, count, totalSkills]);
 
     return (
-        <div ref={ref} className="text-5xl font-bold text-white md:text-7xl">
+        <div ref={ref} className="text-5xl font-bold text-primary md:text-7xl">
             {display}+
         </div>
     );
@@ -86,13 +86,13 @@ export default function Skills() {
                     </p>
 
                     <div className="mt-10">
-                        <TechCounter />
+                        {/* <TechCounter /> */}
 
-                        <p className="mt-2 text-muted-foreground">
+                        {/* <p className="mt-2 text-muted-foreground">
                             Technologies Across SaaS, E-Commerce &amp; Business Systems
-                        </p>
+                        </p> */}
 
-                        <div className="mx-auto mt-8 h-px w-32 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+                        <div className="mx-auto mt-8 h-px w-50 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
                     </div>
                 </div>
 
