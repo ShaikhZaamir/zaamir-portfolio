@@ -41,7 +41,7 @@ const item = {
 
 export default function About() {
     return (
-        <section id="about" className="relative py-16 sm:py-20 lg:py-28">
+        <section id="about" className="relative py-16 sm:py-20 lg:py-28 bg-background">
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
                 {/* ── Header ── */}
@@ -56,13 +56,13 @@ export default function About() {
                         About
                     </p>
 
-                    <h2 className="mt-3 font-heading text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+                    <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
                         Building software that solves
                         <br className="hidden sm:block" />
                         &nbsp;real business problems
                     </h2>
 
-                    <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-slate-400">
+                    <p className="mx-auto mt-5 max-w-3xl text-base leading-7 text-muted-foreground">
                         I&apos;m a software developer focused on turning complex requirements into
                         reliable, maintainable, and user-focused software from SaaS platforms
                         to AI-powered solutions.
@@ -82,17 +82,17 @@ export default function About() {
                             key={title}
                             variants={item}
                             whileHover={{ y: -4 }}
-                            className="group flex flex-col gap-3 rounded-2xl border border-white/8 bg-white/[0.04] p-4 transition-colors hover:border-primary/30 hover:bg-white/[0.07] sm:p-5"
+                            className="group flex flex-col gap-3 rounded-2xl border border-border bg-muted/30 p-4 transition-all hover:border-primary/30 hover:bg-muted/50 sm:p-5"
                         >
-                            <div className="w-fit rounded-xl border border-white/8 bg-white/5 p-2.5 transition-colors group-hover:border-primary/20 group-hover:bg-primary/10">
-                                <Icon className="h-5 w-5 text-slate-300 transition-colors group-hover:text-primary sm:h-6 sm:w-6" />
+                            <div className="w-fit rounded-xl border border-border bg-background p-2.5 transition-colors group-hover:border-primary/20 group-hover:bg-primary/10">
+                                <Icon className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary sm:h-6 sm:w-6" />
                             </div>
 
                             <div>
-                                <h3 className="text-base font-semibold text-white sm:text-base">
+                                <h3 className="text-base font-semibold text-foreground">
                                     {title}
                                 </h3>
-                                <p className="mt-1 text-xs leading-relaxed text-slate-500 sm:text-sm">
+                                <p className="mt-1 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                                     {description}
                                 </p>
                             </div>
@@ -106,42 +106,38 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-60px" }}
                     transition={{ duration: 0.4, delay: 0.1 }}
-                    className="mt-6 rounded-2xl border border-white/8 bg-white/[0.04] p-5 sm:mt-8 sm:p-8"
+                    className="mt-6 rounded-2xl border border-border bg-muted/30 p-5 sm:mt-8 sm:p-8"
                 >
-                    {/* Card header */}
                     <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-                        <span className="inline-flex w-fit items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary sm:text-xs">
+                        <span className="inline-flex w-fit items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
                             Developer profile
                         </span>
                     </div>
 
-                    <h3 className="mt-4 text-2xl font-bold text-white sm:text-2xl lg:text-3xl">
+                    <h3 className="mt-4 text-2xl font-bold text-foreground sm:text-2xl lg:text-3xl">
                         Passionate about building impactful software
                     </h3>
 
-                    <p className="mt-3 text-base leading-7 text-slate-400 sm:mt-4 sm:text-base">
+                    <p className="mt-3 text-base leading-7 text-muted-foreground sm:mt-4">
                         I enjoy building software that creates measurable value for users and
                         businesses. My interests span full-stack development, SaaS platforms,
                         AI-powered solutions, and scalable system design writing clean,
                         maintainable code that solves real problems.
                     </p>
 
-                    {/* Divider */}
-                    <div className="my-6 h-px bg-white/8 sm:my-8" />
+                    <div className="my-6 h-px bg-border sm:my-8" />
 
-                    {/* Two-col pill groups */}
                     <div className="grid gap-6 sm:grid-cols-2 sm:gap-8">
-
                         {/* Focus on */}
                         <div>
-                            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500 sm:text-xs">
+                            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                                 Focus on
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {focusAreas.map((f) => (
                                     <span
                                         key={f}
-                                        className="rounded-full border border-white/10 bg-white/5 px-2 py-1.5 text-sm text-slate-300 sm:text-sm"
+                                        className="rounded-full border border-border bg-background px-3 py-1.5 text-sm text-secondary-foreground"
                                     >
                                         {f}
                                     </span>
@@ -151,14 +147,14 @@ export default function About() {
 
                         {/* Currently exploring */}
                         <div>
-                            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-slate-500 sm:text-xs">
+                            <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
                                 Currently exploring
                             </p>
                             <div className="flex flex-wrap gap-2">
                                 {exploring.map((e) => (
                                     <span
                                         key={e}
-                                        className="rounded-full border border-primary/20 bg-primary/8 px-2 py-1.5 text-sm text-primary sm:text-sm"
+                                        className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-sm text-primary"
                                     >
                                         {e}
                                     </span>
@@ -167,7 +163,6 @@ export default function About() {
                         </div>
                     </div>
                 </motion.div>
-
             </div>
         </section>
     );

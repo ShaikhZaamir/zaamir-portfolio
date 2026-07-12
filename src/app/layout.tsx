@@ -20,8 +20,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050816",
-  colorScheme: "dark",
+  themeColor: "#FFFFFF",
+  colorScheme: "light",
   width: "device-width",
   initialScale: 1,
 };
@@ -68,13 +68,9 @@ export const metadata: Metadata = {
   ],
 
   creator: "Zaamir Shaikh",
-
   publisher: "Zaamir Shaikh",
-
   applicationName: "Zaamir Portfolio",
-
   category: "technology",
-
   referrer: "origin-when-cross-origin",
 
   formatDetection: {
@@ -152,7 +148,7 @@ export default function RootLayout({
           "bg-background",
           "text-foreground",
           "selection:bg-primary",
-          "selection:text-white"
+          "selection:text-primary-foreground"
         )}
       >
         <PersonSchema />

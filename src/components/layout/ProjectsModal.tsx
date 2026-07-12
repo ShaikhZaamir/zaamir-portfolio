@@ -77,7 +77,7 @@ export default function ProjectsModal({
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.2 }}
                     onClick={onClose}
-                    className="fixed inset-0 z-50 flex flex-col bg-black/70 backdrop-blur-md sm:items-center sm:justify-center sm:p-6 lg:p-10"
+                    className="fixed inset-0 z-50 flex flex-col bg-background/80 backdrop-blur-md sm:items-center sm:justify-center sm:p-6 lg:p-10"
                 >
                     <motion.div
                         role="dialog"
@@ -96,9 +96,9 @@ export default function ProjectsModal({
                         }
                         transition={{ duration: prefersReducedMotion ? 0.01 : 0.25, ease: "easeOut" }}
                         onClick={(event) => event.stopPropagation()}
-                        className="relative flex h-full w-full flex-col overflow-hidden bg-background sm:h-auto sm:max-h-[85vh] sm:max-w-4xl sm:rounded-3xl sm:border sm:border-white/10 lg:max-w-6xl"
+                        className="relative flex h-full w-full flex-col overflow-hidden bg-background sm:h-auto sm:max-h-[85vh] sm:max-w-4xl sm:rounded-3xl sm:border sm:border-border lg:max-w-6xl shadow-xl"
                     >
-                        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-white/10 px-5 py-5 sm:px-8 sm:py-6">
+                        <div className="flex shrink-0 items-start justify-between gap-4 border-b border-border px-5 py-5 sm:px-8 sm:py-6">
                             <div className="min-w-0">
                                 <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                                     <span className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -107,12 +107,12 @@ export default function ProjectsModal({
 
                                 <h3
                                     id="projects-modal-title"
-                                    className="mt-3 text-2xl font-bold leading-tight text-white sm:text-3xl"
+                                    className="mt-3 text-2xl font-bold leading-tight text-foreground sm:text-3xl"
                                 >
                                     {project.name}
                                 </h3>
 
-                                <p className="mt-1 text-sm text-slate-400">{project.type}</p>
+                                <p className="mt-1 text-sm text-muted-foreground">{project.type}</p>
                             </div>
 
                             <div className="flex shrink-0 items-center gap-3">
@@ -122,7 +122,7 @@ export default function ProjectsModal({
                                         href={project.liveUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hidden items-center gap-2 whitespace-nowrap rounded-full bg-primary px-5 py-2 text-sm font-medium text-white transition hover:opacity-90 lg:inline-flex"
+                                        className="hidden items-center gap-2 whitespace-nowrap rounded-full bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:opacity-90 lg:inline-flex"
                                     >
                                         <ExternalLink className="h-4 w-4" />
                                         Live Demo
@@ -134,7 +134,7 @@ export default function ProjectsModal({
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10 lg:inline-flex"
+                                        className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-border bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground transition hover:bg-secondary/80 lg:inline-flex"
                                     >
                                         <SiGithub className="h-4 w-4" />
                                         GitHub
@@ -145,7 +145,7 @@ export default function ProjectsModal({
                                     type="button"
                                     onClick={onClose}
                                     aria-label="Close project details"
-                                    className="rounded-xl border border-white/10 p-2 text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                                    className="rounded-xl border border-border p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
                                 >
                                     <X className="h-5 w-5" />
                                 </button>
@@ -153,7 +153,7 @@ export default function ProjectsModal({
                         </div>
 
                         <div className="min-h-0 flex-1 overflow-y-auto px-5 py-6 sm:px-8 sm:py-8 scrollbar-none">
-                            <p className="text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
+                            <p className="text-base leading-7 text-secondary-foreground sm:text-lg sm:leading-8">
                                 {project.summary}
                             </p>
 
@@ -162,26 +162,26 @@ export default function ProjectsModal({
                                 <div className="space-y-8">
                                     {/* Challenge + Solution, paired side-by-side once there's room */}
                                     <div className="grid gap-6 sm:grid-cols-2">
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                        <div className="rounded-2xl border border-border bg-muted/50 p-5">
                                             <div className="flex items-center gap-2">
                                                 <AlertTriangle className="h-4 w-4 text-primary" />
-                                                <h4 className="text-base font-semibold text-white">
+                                                <h4 className="text-base font-semibold text-foreground">
                                                     Challenge
                                                 </h4>
                                             </div>
-                                            <p className="mt-3 leading-7 text-slate-400">
+                                            <p className="mt-3 leading-7 text-muted-foreground">
                                                 {project.challenge}
                                             </p>
                                         </div>
 
-                                        <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                                        <div className="rounded-2xl border border-border bg-muted/50 p-5">
                                             <div className="flex items-center gap-2">
                                                 <Lightbulb className="h-4 w-4 text-primary" />
-                                                <h4 className="text-base font-semibold text-white">
+                                                <h4 className="text-base font-semibold text-foreground">
                                                     Solution
                                                 </h4>
                                             </div>
-                                            <p className="mt-3 leading-7 text-slate-400">
+                                            <p className="mt-3 leading-7 text-muted-foreground">
                                                 {project.solution}
                                             </p>
                                         </div>
@@ -191,7 +191,7 @@ export default function ProjectsModal({
                                     <div>
                                         <div className="flex items-center gap-2">
                                             <Sparkles className="h-4 w-4 text-primary" />
-                                            <h4 className="text-base font-semibold text-white">
+                                            <h4 className="text-base font-semibold text-foreground">
                                                 Key Features
                                             </h4>
                                         </div>
@@ -200,10 +200,10 @@ export default function ProjectsModal({
                                             {project.features.map((feature) => (
                                                 <div
                                                     key={feature}
-                                                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                                                    className="flex items-start gap-3 rounded-xl border border-border bg-muted/30 p-4"
                                                 >
                                                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                                                    <span className="text-sm leading-6 text-slate-300">
+                                                    <span className="text-sm leading-6 text-secondary-foreground">
                                                         {feature}
                                                     </span>
                                                 </div>
@@ -215,7 +215,7 @@ export default function ProjectsModal({
                                     <div>
                                         <div className="flex items-center gap-2">
                                             <Cpu className="h-4 w-4 text-primary" />
-                                            <h4 className="text-base font-semibold text-white">
+                                            <h4 className="text-base font-semibold text-foreground">
                                                 Technical Highlights
                                             </h4>
                                         </div>
@@ -224,10 +224,10 @@ export default function ProjectsModal({
                                             {project.technicalHighlights.map((highlight) => (
                                                 <div
                                                     key={highlight}
-                                                    className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/5 p-4"
+                                                    className="flex items-start gap-3 rounded-xl border border-border bg-muted/30 p-4"
                                                 >
                                                     <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                                                    <span className="text-sm leading-6 text-slate-300">
+                                                    <span className="text-sm leading-6 text-secondary-foreground">
                                                         {highlight}
                                                     </span>
                                                 </div>
@@ -238,11 +238,11 @@ export default function ProjectsModal({
                                     <div className="rounded-2xl border border-primary/20 bg-primary/5 p-5">
                                         <div className="flex items-center gap-2">
                                             <TrendingUp className="h-4 w-4 text-primary" />
-                                            <h4 className="text-base font-semibold text-white">
+                                            <h4 className="text-base font-semibold text-foreground">
                                                 Impact
                                             </h4>
                                         </div>
-                                        <p className="mt-3 leading-7 text-slate-300">
+                                        <p className="mt-3 leading-7 text-secondary-foreground">
                                             {project.impact}
                                         </p>
                                     </div>
@@ -251,7 +251,7 @@ export default function ProjectsModal({
                                 <div className="lg:sticky lg:top-0 lg:self-start">
                                     <div className="flex items-center gap-2">
                                         <Layers className="h-4 w-4 text-primary" />
-                                        <h4 className="text-base font-semibold text-white">
+                                        <h4 className="text-base font-semibold text-foreground">
                                             Technology Stack
                                         </h4>
                                     </div>
@@ -271,13 +271,13 @@ export default function ProjectsModal({
                         </div>
 
                         {hasLinks && (
-                            <div className="grid shrink-0 grid-cols-2 gap-3 border-t border-white/10 px-5 py-4 sm:px-8 lg:hidden">
+                            <div className="grid shrink-0 grid-cols-2 gap-3 border-t border-border px-5 py-4 sm:px-8 lg:hidden">
                                 {project.liveUrl && (
                                     <a
                                         href={project.liveUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-white transition hover:opacity-90 ${project.githubUrl ? "" : "col-span-2"
+                                        className={`inline-flex items-center justify-center gap-2 rounded-full bg-primary px-4 py-3 text-sm font-medium text-primary-foreground transition hover:opacity-90 ${project.githubUrl ? "" : "col-span-2"
                                             }`}
                                     >
                                         <ExternalLink className="h-4 w-4" />
@@ -290,7 +290,7 @@ export default function ProjectsModal({
                                         href={project.githubUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className={`inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-medium text-white transition hover:bg-white/10 ${project.liveUrl ? "" : "col-span-2"
+                                        className={`inline-flex items-center justify-center gap-2 rounded-full border border-border bg-secondary px-4 py-3 text-sm font-medium text-secondary-foreground transition hover:bg-secondary/80 ${project.liveUrl ? "" : "col-span-2"
                                             }`}
                                     >
                                         <SiGithub className="h-4 w-4" />

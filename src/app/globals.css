@@ -59,110 +59,102 @@
 }
 
 /* =========================================
-   Root Theme
+   Root Theme (Light - Modern Clean)
 ========================================= */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --background: #050816;
-  --foreground: #f8fafc;
+  /* Base */
+  --background: #FFFFFF;
+  /* Pure white background */
+  --foreground: #0f172a;
+  /* Slate 900 for high-contrast, readable text */
 
-  --card: rgba(255, 255, 255, 0.04);
-  --card-foreground: #f8fafc;
+  /* Cards & Popovers */
+  --card: #FFFFFF;
+  --card-foreground: #0f172a;
+  --popover: #FFFFFF;
+  --popover-foreground: #0f172a;
 
-  --popover: #050816;
-  --popover-foreground: #f8fafc;
-
-  --primary: #7c3aed;
+  /* Primary Brand (Indigo) */
+  --primary: #0079be;
+  /* Indigo 600 */
   --primary-foreground: #ffffff;
+  /* White text on primary buttons */
 
-  --secondary: #06b6d4;
-  --secondary-foreground: #ffffff;
+  /* Secondary & Muted (Slate) */
+  --secondary: #f1f5f9;
+  /* Slate 100 */
+  --secondary-foreground: #1e293b;
+  /* Slate 800 */
+  --muted: #f8fafc;
+  /* Slate 50 */
+  --muted-foreground: #64748b;
+  /* Slate 500 for secondary text */
 
-  --muted: rgba(255, 255, 255, 0.05);
-  --muted-foreground: #94a3b8;
+  /* Accents */
+  --accent: #eef2ff;
+  /* Indigo 50 for hovers */
+  --accent-foreground: #312e81;
+  /* Indigo 900 */
 
-  --accent: #10b981;
-  --accent-foreground: #ffffff;
-
+  /* Status & Forms */
   --destructive: #ef4444;
+  /* Red 500 */
+  --border: #e2e8f0;
+  /* Slate 200 for clean structural lines */
+  --input: #e2e8f0;
+  --ring: #4f46e5;
+  /* Indigo ring for focus states */
 
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.08);
-
-  --ring: #7c3aed;
-
-  --chart-1: #7c3aed;
-  --chart-2: #06b6d4;
+  /* Charts */
+  --chart-1: #4f46e5;
+  --chart-2: #0ea5e9;
   --chart-3: #10b981;
   --chart-4: #8b5cf6;
-  --chart-5: #22c55e;
+  --chart-5: #f59e0b;
 
   --radius: 1rem;
 
-  --sidebar: #0b1023;
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: #7c3aed;
+  /* Sidebar (If used later) */
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #4f46e5;
   --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: rgba(255, 255, 255, 0.05);
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: #7c3aed;
+  --sidebar-accent: #e2e8f0;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #4f46e5;
 }
 
 /* =========================================
-   Optional Dark Theme
+   Dark Theme Fallback (Optional)
 ========================================= */
-
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
-
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
-
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-
   --accent: oklch(0.269 0 0);
   --accent-foreground: oklch(0.985 0 0);
-
   --destructive: oklch(0.704 0.191 22.216);
-
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
 
 /* =========================================
    Base
 ========================================= */
-
 @layer base {
 
   *,
@@ -174,7 +166,6 @@
 
   html {
     @apply font-sans;
-
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -182,7 +173,6 @@
 
   body {
     @apply bg-background text-foreground;
-
     overflow-x: hidden;
   }
 
@@ -201,7 +191,6 @@
 /* =========================================
    Utilities
 ========================================= */
-
 @layer utilities {
   .font-heading {
     font-family: var(--font-space-grotesk);
@@ -211,7 +200,6 @@
 /* =========================================
    Smooth Scroll
 ========================================= */
-
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -221,21 +209,19 @@
 /* =========================================
    Selection
 ========================================= */
-
 ::selection {
   background: var(--primary);
-  color: white;
+  color: var(--primary-foreground);
 }
 
 ::-moz-selection {
   background: var(--primary);
-  color: white;
+  color: var(--primary-foreground);
 }
 
 /* =========================================
    Scrollbar
 ========================================= */
-
 html,
 body {
   -ms-overflow-style: none;

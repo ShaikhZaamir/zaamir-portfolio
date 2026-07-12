@@ -16,7 +16,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="relative py-24"
+            className="relative py-24 bg-slate-50"
         >
             <div className="mx-auto max-w-7xl px-6">
                 {/* Header */}
@@ -25,11 +25,11 @@ export default function Projects() {
                         PROJECTS
                     </p>
 
-                    <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
+                    <h2 className="mt-3 font-heading text-3xl font-bold text-slate-900 md:text-5xl">
                         Featured Projects
                     </h2>
 
-                    <p className="mt-4 text-slate-400">
+                    <p className="mt-4 text-slate-600">
                         A showcase of production-ready SaaS platforms, business applications, and software systems designed to
                         solve real-world challenges and support business operations.
                     </p>
@@ -42,25 +42,27 @@ export default function Projects() {
                             key={project.id}
                             whileHover={{ y: -8 }}
                             onClick={() => setSelectedProject(project)}
-                            className="group rounded-3xl border border-white/10 bg-white/5 text-left backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:bg-white/[0.07] hover:shadow-[0_0_50px_rgba(124,58,237,0.15)]"
+                            className="group rounded-3xl border border-slate-200 bg-white text-left transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5"
                         >
                             <div className="p-6">
+                                {/* Status badge automatically works with the new primary color! */}
                                 <span className="inline-flex rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                                     {project.status}
                                 </span>
 
-                                <h3 className="mt-4 text-xl lg:text-2xl font-bold text-white">
+                                <h3 className="mt-4 text-xl lg:text-2xl font-bold text-slate-900">
                                     {project.name}
                                 </h3>
 
-                                <p className="mt-2 text-sm text-slate-400">
+                                <p className="mt-2 text-sm text-slate-500 font-medium">
                                     {project.type}
                                 </p>
 
-                                <p className="mt-4 line-clamp-3 leading-7 text-slate-300">
+                                <p className="mt-4 line-clamp-3 leading-7 text-slate-600">
                                     {project.description}
                                 </p>
 
+                                {/* Tech Stack Tags */}
                                 <div className="mt-6 flex flex-wrap gap-2">
                                     {project.tech
                                         .slice(0, 4)
@@ -70,12 +72,13 @@ export default function Projects() {
                                                 className="
                                                     rounded-full
                                                     border
-                                                    border-white/10
-                                                    bg-white/5
+                                                    border-slate-100
+                                                    bg-slate-50
                                                     px-3
                                                     py-1
                                                     text-xs
-                                                    text-slate-300
+                                                    font-medium
+                                                    text-slate-600
                                                 "
                                             >
                                                 {tech}
@@ -83,6 +86,7 @@ export default function Projects() {
                                         ))}
                                 </div>
 
+                                {/* View Details Link */}
                                 <div className="mt-6 flex items-center gap-2 text-primary">
                                     <span className="font-medium">
                                         View Details
@@ -96,14 +100,14 @@ export default function Projects() {
                 </div>
 
                 {/* GitHub CTA */}
-                <div className="mt-10 text-center">
+                <div className="mt-12 text-center">
                     <a
                         href={LINKS.GITHUB}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-3 backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-white/10"
+                        className="group inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white px-6 py-3 shadow-sm transition-all duration-300 hover:border-primary/30 hover:bg-slate-50 hover:shadow-md"
                     >
-                        <span className="font-medium text-white">
+                        <span className="font-medium text-slate-800">
                             Explore More Projects on GitHub
                         </span>
 

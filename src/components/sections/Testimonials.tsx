@@ -82,8 +82,8 @@ export default function Testimonials() {
     );
 
     return (
-        <section id="testimonials" className="relative py-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <section id="testimonials" className="relative py-16 sm:py-20 lg:py-28 bg-background">
+            <div className="mx-auto max-w-6xl px-4 sm:px-6">
 
                 {/* ── Header ── */}
                 <div className="mx-auto max-w-3xl text-center">
@@ -91,11 +91,11 @@ export default function Testimonials() {
                         Testimonials
                     </p>
 
-                    <h2 className="mt-3 font-heading text-3xl font-bold md:text-5xl">
+                    <h2 className="mt-3 font-heading text-3xl font-bold leading-tight text-foreground sm:text-4xl lg:text-5xl">
                         Trusted by clients worldwide
                     </h2>
 
-                    <p className="mx-auto mt-5 max-w-2xl text-slate-400">
+                    <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground">
                         Feedback from clients and businesses I've collaborated with on web
                         development, custom software, and game development projects.
                     </p>
@@ -106,12 +106,14 @@ export default function Testimonials() {
                     {stats.map((stat) => (
                         <div
                             key={stat.label}
-                            className="rounded-2xl border border-white/8 bg-white/[0.04] p-5 text-center"
+                            className="rounded-2xl border border-border bg-muted/30 p-5 text-center transition-all hover:bg-muted/50"
                         >
-                            <div className="text-3xl font-bold text-white">
+                            <div className="text-2xl font-bold text-foreground sm:text-3xl">
                                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
                             </div>
-                            <div className="mt-1.5 text-sm text-slate-400">{stat.label}</div>
+                            <div className="mt-1 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                                {stat.label}
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -122,164 +124,94 @@ export default function Testimonials() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4 }}
-                    className="mt-8 rounded-2xl border border-primary/20 bg-white/[0.04] p-6 sm:p-8"
+                    className="mt-8 rounded-2xl border border-primary/20 bg-muted/30 p-6 sm:p-8"
                 >
-                    {/* Top row: stars + Fiverr badge */}
                     <div className="flex flex-wrap items-center justify-between gap-3">
                         <Stars />
                         <FiverrBadge />
                     </div>
 
-                    {/* Quote */}
-                    <blockquote className="mt-5 text-lg leading-8 text-slate-200">
+                    <blockquote className="mt-6 text-lg leading-8 text-foreground/90 italic">
                         "{featured.review}"
                     </blockquote>
 
-                    {/* Author row */}
-                    <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
+                    <div className="mt-8 flex flex-wrap items-end justify-between gap-4 border-t border-border pt-6">
                         <div>
-                            <h4 className="font-semibold text-white">{featured.name}</h4>
-                            <p className="mt-1 text-sm text-slate-400">{featured.project}</p>
+                            <h4 className="font-semibold text-foreground">{featured.name}</h4>
+                            <p className="mt-1 text-sm text-muted-foreground">{featured.project}</p>
                         </div>
 
                         <div className="flex flex-wrap items-center gap-3">
-                            <span className="flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs text-primary">
+                            <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
                                 {featured.category}
                             </span>
 
-                            <div className="flex items-center gap-1.5">
+                            <div className="flex items-center gap-1.5 text-muted-foreground">
                                 <FeaturedFlag className="h-3.5 w-5 rounded-sm" />
-                                <span className="text-sm text-slate-500">{featured.country}</span>
+                                <span className="text-sm">{featured.country}</span>
                             </div>
                         </div>
                     </div>
                 </motion.div>
 
                 {/* ── Other testimonials ── */}
-                <div className="mt-6">
-                    {/* Mobile Slider */}
-                    <div
-                        className="overflow-hidden md:hidden"
-                        ref={emblaRef}
-                    >
-                        <div className="flex">
+                <div className="mt-12">
+                    {/* Mobile Slider / Desktop Grid (Unified Logic) */}
+                    <div className="overflow-hidden md:overflow-visible">
+                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
                             {others.map((testimonial, index) => {
-                                const Flag =
-                                    flags[
-                                    testimonial.countryCode as keyof typeof flags
-                                    ];
+                                const Flag = flags[testimonial.countryCode as keyof typeof flags];
 
                                 return (
-                                    <div
+                                    <motion.div
                                         key={testimonial.name + index}
-                                        className="min-w-0 flex-[0_0_85%] pl-4"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.3, delay: index * 0.08 }}
+                                        whileHover={{ y: -4 }}
+                                        className="flex h-full flex-col rounded-2xl border border-border bg-muted/30 p-6 transition-all hover:border-primary/30 hover:bg-muted/50"
                                     >
-                                        <motion.div
-                                            whileHover={{ y: -4 }}
-                                            className="flex h-full flex-col rounded-2xl border border-white/8 bg-white/[0.04] p-5 transition-colors hover:border-primary/30"
-                                        >
-                                            <div className="flex flex-wrap items-center justify-between gap-2">
-                                                <Stars />
-                                                <FiverrBadge />
-                                            </div>
+                                        <div className="flex items-center justify-between">
+                                            <Stars />
+                                            <FiverrBadge />
+                                        </div>
 
-                                            <p className="mt-4 flex-1 text-sm leading-7 text-slate-300">
-                                                "{testimonial.review}"
-                                            </p>
+                                        <p className="mt-5 flex-1 text-sm leading-7 text-muted-foreground">
+                                            "{testimonial.review}"
+                                        </p>
 
-                                            <div className="mt-5 border-t border-white/8 pt-4">
-                                                <div className="flex items-start justify-between gap-3">
-                                                    <div>
-                                                        <h4 className="font-medium text-white">
-                                                            {testimonial.name}
-                                                        </h4>
-                                                        <p className="mt-0.5 text-sm text-slate-400">
-                                                            {testimonial.project}
-                                                        </p>
-                                                    </div>
-
-                                                    <div className="flex shrink-0 items-center gap-1.5 pt-0.5">
-                                                        <Flag className="h-3.5 w-5 rounded-sm" />
-                                                        <span className="text-sm text-slate-500">
-                                                            {testimonial.country}
-                                                        </span>
-                                                    </div>
+                                        <div className="mt-6 border-t border-border pt-5">
+                                            <div className="flex items-start justify-between gap-3">
+                                                <div>
+                                                    <h4 className="font-semibold text-foreground">
+                                                        {testimonial.name}
+                                                    </h4>
+                                                    <p className="mt-0.5 text-xs text-muted-foreground">
+                                                        {testimonial.project}
+                                                    </p>
                                                 </div>
 
-                                                <div className="mt-3">
-                                                    <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-                                                        {testimonial.category}
+                                                <div className="flex shrink-0 items-center gap-1.5">
+                                                    <Flag className="h-3.5 w-5 rounded-sm" />
+                                                    <span className="text-xs text-muted-foreground">
+                                                        {testimonial.country}
                                                     </span>
                                                 </div>
                                             </div>
-                                        </motion.div>
-                                    </div>
+
+                                            <div className="mt-4">
+                                                <span className="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                                                    {testimonial.category}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </motion.div>
                                 );
                             })}
                         </div>
                     </div>
-
-                    {/* Desktop Grid */}
-                    <div className="hidden gap-4 sm:gap-6 md:grid md:grid-cols-2 xl:grid-cols-3">
-                        {others.map((testimonial, index) => {
-                            const Flag =
-                                flags[
-                                testimonial.countryCode as keyof typeof flags
-                                ];
-
-                            return (
-                                <motion.div
-                                    key={testimonial.name + index}
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{
-                                        duration: 0.3,
-                                        delay: index * 0.08,
-                                    }}
-                                    whileHover={{ y: -4 }}
-                                    className="flex flex-col rounded-2xl border border-white/8 bg-white/[0.04] p-5 transition-colors hover:border-primary/30 sm:p-6"
-                                >
-                                    <div className="flex flex-wrap items-center justify-between gap-2">
-                                        <Stars />
-                                        <FiverrBadge />
-                                    </div>
-
-                                    <p className="mt-4 flex-1 text-sm leading-7 text-slate-300">
-                                        "{testimonial.review}"
-                                    </p>
-
-                                    <div className="mt-5 border-t border-white/8 pt-4">
-                                        <div className="flex items-start justify-between gap-3">
-                                            <div>
-                                                <h4 className="font-medium text-white">
-                                                    {testimonial.name}
-                                                </h4>
-                                                <p className="mt-0.5 text-sm text-slate-400">
-                                                    {testimonial.project}
-                                                </p>
-                                            </div>
-
-                                            <div className="flex shrink-0 items-center gap-1.5 pt-0.5">
-                                                <Flag className="h-3.5 w-5 rounded-sm" />
-                                                <span className="text-sm text-slate-500">
-                                                    {testimonial.country}
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                        <div className="mt-3">
-                                            <span className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-                                                {testimonial.category}
-                                            </span>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            );
-                        })}
-                    </div>
                 </div>
-
             </div>
         </section>
     );

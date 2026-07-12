@@ -93,22 +93,22 @@ export default function Navbar() {
             transition={{ duration: 0.4 }}
             className="fixed inset-x-0 top-0 z-50"
         >
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 pb-2 pt-2">
+            <div className="mx-auto max-w-5xl px-4 sm:px-6 pb-2 pt-2 lg:pt-4">
                 <div
-                    className={`relative flex items-center justify-between rounded-full px-4 sm:px-6 py-2 transition-all duration-300 ${scrolled
-                        ? "border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.25)]"
-                        : "bg-transparent"
+                    className={`relative flex items-center justify-between rounded-full px-4 sm:px-6 py-2 sm:py-3 transition-all duration-300 ${scrolled
+                            ? "border border-slate-200/60 bg-white/80 backdrop-blur-xl shadow-sm"
+                            : "bg-transparent"
                         }`}
                 >
-                    {/* Aurora Glow */}
+                    {/* Aurora Glow - Adjusted for light theme */}
                     {scrolled && (
-                        <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-violet-500/5 via-cyan-500/5 to-emerald-500/5" />
+                        <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500/5 via-cyan-500/5 to-emerald-500/5" />
                     )}
 
                     {/* Logo */}
                     <button
                         onClick={() => scrollToSection("hero")}
-                        className="relative z-10 font-heading text-sm font-bold tracking-[0.2em] sm:tracking-[0.3em] text-white transition-opacity hover:opacity-80"
+                        className="relative z-10 font-heading text-sm font-bold tracking-[0.2em] sm:tracking-[0.3em] text-slate-900 transition-opacity hover:opacity-70"
                     >
                         ZAAMIR
                     </button>
@@ -119,9 +119,9 @@ export default function Navbar() {
                             <button
                                 key={item.label}
                                 onClick={() => scrollToSection(item.id)}
-                                className={`relative text-sm font-medium transition-all duration-200 ${activeSection === item.id
-                                    ? "text-white"
-                                    : "text-slate-400 hover:text-white"
+                                className={`relative text-sm font-medium transition-all duration-200 py-1 ${activeSection === item.id
+                                        ? "text-primary font-semibold"
+                                        : "text-slate-500 hover:text-slate-900"
                                     }`}
                             >
                                 {item.label}
@@ -134,17 +134,17 @@ export default function Navbar() {
                                             stiffness: 380,
                                             damping: 30,
                                         }}
-                                        className="absolute -bottom-2 left-0 h-[2px] w-full rounded-full bg-gradient-to-r from-violet-500 to-cyan-500"
+                                        className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-primary"
                                     />
                                 )}
                             </button>
                         ))}
                     </nav>
 
-                    {/* Resume CTA */}
+                    {/* Resume CTA Desktop */}
                     <Button
                         onClick={() => window.open(LINKS.RESUME, "_blank")}
-                        className="hidden lg:flex rounded-full px-3 bg-violet-600 hover:bg-violet-500 transition-all duration-200"
+                        className="hidden lg:flex rounded-full px-5 bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm transition-all duration-200"
                     >
                         <FileText className="mr-2 h-4 w-4" />
                         Resume
@@ -157,7 +157,7 @@ export default function Navbar() {
                             <Button
                                 variant="ghost"
                                 size="icon"
-                                className="relative z-10 lg:hidden"
+                                className="relative z-10 lg:hidden text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                             >
                                 <Menu className="h-5 w-5" />
                             </Button>
@@ -165,32 +165,37 @@ export default function Navbar() {
 
                         <SheetContent
                             side="right"
-                            className="min-w-full px-8 bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-md border border-white/10 "                        >
-                            <div className="mt-14 px-2 flex flex-col">
-                                <div className="mb-8">
-                                    <p className="text-xs tracking-[0.3em] text-slate-500">
+                            className="min-w-full sm:min-w-[300px] px-6 bg-white/95 backdrop-blur-xl border-l border-slate-200 shadow-2xl"
+                        >
+                            <div className="mt-14 flex flex-col h-full">
+                                <div className="mb-6 px-4">
+                                    <p className="text-xs font-semibold tracking-[0.3em] text-slate-400">
                                         NAVIGATION
                                     </p>
                                 </div>
-                                {navItems.map((item) => (
-                                    <button
-                                        key={item.label}
-                                        onClick={() => handleMobileNavigation(item.id)}
-                                        className={`text-left py-3 text-base font-medium transition-colors ${activeSection === item.id
-                                            ? "text-white"
-                                            : "text-slate-300 hover:text-white"
-                                            }`}
-                                    >
-                                        {item.label}
-                                    </button>
-                                ))}
+
+                                <div className="flex flex-col gap-1">
+                                    {navItems.map((item) => (
+                                        <button
+                                            key={item.label}
+                                            onClick={() => handleMobileNavigation(item.id)}
+                                            className={`text-left px-4 py-3 rounded-xl text-base font-medium transition-colors ${activeSection === item.id
+                                                    ? "bg-indigo-50 text-primary"
+                                                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                                                }`}
+                                        >
+                                            {item.label}
+                                        </button>
+                                    ))}
+                                </div>
 
                                 <Button
                                     onClick={() => {
                                         setOpen(false);
                                         window.open(LINKS.RESUME, "_blank");
                                     }}
-                                    className="w-fit my-5 lg:flex rounded-full px-3 bg-violet-600 hover:bg-violet-500 transition-all duration-200"
+                                    size="lg"
+                                    className="mt-8 mx-4 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-md transition-all duration-200"
                                 >
                                     <FileText className="mr-2 h-4 w-4" />
                                     Resume
