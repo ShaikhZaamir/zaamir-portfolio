@@ -2,35 +2,35 @@ import {
     Briefcase,
     Gamepad2,
     Rocket,
-    Star,
 } from "lucide-react";
 
 export const experiences = [
     {
-        year: "2022",
-        duration: "Feb 2022 - May 2022",
+        year: "2026",
+        duration: "Jan 2026 - May 2026",
 
         badge: "INTERNSHIP",
         badgeColor: "cyan",
 
-        title: "Unity Developer Intern",
-        company: "Vighnesh Inc.",
-        icon: Gamepad2,
+        title: "Software Developer Intern",
+        company: "QuickSO",
+        icon: Rocket,
 
         current: false,
 
         description:
-            "Contributed to Unity-based applications while gaining hands-on experience in software development workflows, version control, and collaborative development practices.",
+            "Developed features for a production construction management SaaS platform, transforming Figma designs into responsive interfaces while building business modules, authentication workflows, and backend integrations.",
 
         highlights: [
-            "Unity Development",
-            "Game Mechanics",
-            "Version Control with Git",
+            "Production SaaS Development",
+            "Thorough Manual Testing",
+            "Figma to Responsive UI",
+            "RBAC & Auth Systems",
         ],
 
-        tech: ["Unity", "C#", "Git"],
+        tech: ["React", "Next.js", "TypeScript"],
     },
-    
+
     {
         year: "2022",
         duration: "Jan 2022 - Dec 2024",
@@ -49,35 +49,37 @@ export const experiences = [
 
         highlights: [
             "10+ Projects Delivered",
-            "International Clients",
-            "3 Years Freelancing",
+            "End-to-End Deployment",
+            "100% On-Time Deadlines",
+            "Clients Worldwide",
         ],
 
         tech: ["React", "JavaScript", "Node.js"],
     },
 
     {
-        year: "2026",
-        duration: "Jan 2026 - May 2026",
+        year: "2022",
+        duration: "Feb 2022 - May 2022",
 
         badge: "INTERNSHIP",
         badgeColor: "cyan",
 
-        title: "Software Developer Intern",
-        company: "QuickSO",
-        icon: Rocket,
+        title: "Unity Developer Intern",
+        company: "Vighnesh Inc.",
+        icon: Gamepad2,
 
         current: false,
 
         description:
-            "Developed features for a production construction management SaaS platform, transforming Figma designs into responsive interfaces while building business modules, authentication workflows, and backend integrations.",
+            "Contributed to Unity-based applications while gaining hands-on experience in software development workflows, version control, and collaborative development practices.",
 
         highlights: [
-            "Production SaaS Platform",
-            "Figma to Production UI",
-            "Frontend & Backend Development",
+            "AR/VR Mobile Applications",
+            "C# Scripting & Mechanics",
+            "Cross-Platform Optimization",
+            "Git Version Control",
         ],
 
-        tech: ["React", "Next.js", "TypeScript"],
+        tech: ["Unity", "C#", "Git"],
     },
 ];

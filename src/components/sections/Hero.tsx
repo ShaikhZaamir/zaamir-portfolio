@@ -136,18 +136,18 @@ export default function Hero() {
                     <Button
                         size="lg"
                         className="rounded-full px-6 sm:px-8 bg-primary hover:bg-primary/90 text-primary-foreground transition-all"
-                        onClick={() => window.open(LINKS.RESUME, "_blank")}
+                        onClick={() => window.open(LINKS.FIVERR, "_blank")}
                     >
-                        View Resume
+                        Fiverr Profile
                     </Button>
 
                     <Button
                         variant="outline"
                         size="lg"
                         className="rounded-full px-6 sm:px-8 border-slate-200 hover:bg-slate-50 hover:border-slate-300 text-slate-700 transition-all"
-                        onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+                        onClick={() => document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })}
                     >
-                        Let's Connect
+                        Client Reviews
                     </Button>
                 </div>
 
@@ -174,7 +174,7 @@ export default function Hero() {
                             </div>
 
                             {/* Accent underline */}
-                            <div className="relative mx-auto mt-2 h-px w-8 bg-gradient-to-r from-transparent via-primary/30 to-transparent transition-all duration-300 group-hover:w-12 group-hover:via-primary/60" />
+                            <div className="relative mx-auto mt-2 h-px w-14 bg-gradient-to-r from-transparent via-primary/30 to-transparent transition-all duration-300 group-hover:w-12 group-hover:via-primary/60" />
 
                             <p className="relative mt-2 text-xs font-medium text-slate-500 sm:text-sm">
                                 {stat.label}
