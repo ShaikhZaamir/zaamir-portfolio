@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import ZaraChat from "@/components/ai/ZaraChat";
 import "./globals.css";
 
 import { cn } from "@/lib/utils";
@@ -153,6 +154,7 @@ export default function RootLayout({
       >
         <PersonSchema />
         {children}
+        <ZaraChat />
       </body>
     </html>
   );
