@@ -66,7 +66,7 @@
   color-scheme: light;
 
   /* Base */
-  --background: #FFFFFF;
+  --background: #ffffff;
   /* Pure white background */
   --foreground: #0f172a;
   /* Slate 900 for high-contrast, readable text */
@@ -243,4 +243,34 @@ body::-webkit-scrollbar {
 
 Button{
   cursor: pointer;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 50s linear infinite;
+}
+
+.animate-marquee-reverse {
+    display: flex;
+    width: max-content;
+    animation: marquee-reverse 50s linear infinite;
 }

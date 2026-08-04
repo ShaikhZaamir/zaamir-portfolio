@@ -95,8 +95,8 @@ export default function Navbar() {
         >
             <div className="mx-auto max-w-5xl px-4 sm:px-6 pb-2 pt-2 lg:pt-4">
                 <div
-                    className={`relative flex items-center justify-between rounded-full px-4 sm:px-6 py-2 sm:py-3 transition-all duration-300 ${scrolled
-                            ? "border border-slate-200/60 bg-white/80 backdrop-blur-xl shadow-sm"
+                    className={`relative flex items-center justify-between rounded-full px-4 sm:px-6 py-2 sm:py-3 transition-all duration-600 ${scrolled
+                            ? "border-slate-200/60 bg-white/80 backdrop-blur-xl shadow-sm"
                             : "bg-transparent"
                         }`}
                 >

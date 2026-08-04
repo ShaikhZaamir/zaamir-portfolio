@@ -33,18 +33,18 @@ const industryExperience =
 
 const stats = [
     {
-        value: softwareYears,
+        value: 3,
         suffix: "+",
         unit: "Years",
         label: "Building Software",
         decimals: 0,
     },
     {
-        value: 0.5,
-        suffix: "+",
-        unit: "Years",
+        value: 5,
+        suffix: "",
+        unit: "Months",
         label: "Industry Experience",
-        decimals: 1,
+        decimals: 0,
     },
     {
         value: 10,
@@ -100,7 +100,7 @@ export default function Hero() {
     return (
         <section
             id="hero"
-            className="relative overflow-hidden scroll-mt-30 pt-35 pb-16 bg-white"
+            className="relative overflow-hidden scroll-mt-30 pt-35 pb-16"
         >
             {/* Subtle light-themed background blobs tied to primary color */}
             <div className="absolute inset-0 -z-10">

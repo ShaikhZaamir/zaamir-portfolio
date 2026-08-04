@@ -153,6 +153,7 @@ export default function RootLayout({
       >
         <PersonSchema />
         {children}
+        {/* <ZaraChat /> */}
       </body>
     </html>
   );

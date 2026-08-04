@@ -16,7 +16,7 @@ export default function Projects() {
     return (
         <section
             id="projects"
-            className="relative py-24 bg-slate-50"
+            className="relative py-24"
         >
             <div className="mx-auto max-w-7xl px-6">
                 {/* Header */}

@@ -1,3 +1,3 @@
 module.exports = {
-  allowedDevOrigins: ['10.50.168.154'],
+  allowedDevOrigins: ['10.234.120.154'],
 }
