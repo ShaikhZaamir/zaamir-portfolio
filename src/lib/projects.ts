@@ -103,7 +103,7 @@ export const projects = [
 
     {
         id: 3,
-        name: "Noor Mobiles Admin Portal",
+        name: "NoorMobiles Admin Dashboard",
         status: "CLIENT PROJECT",
         type: "Administrative Business System",
 

@@ -284,10 +284,22 @@ export const skillCategories = {
             usedIn: ["Runwayy Store"],
         },
         {
+            name: "AWS",
+            icon: Cloud,
+            description: "Frontend deployment platform.",
+            usedIn: ["Runwayy Store", "Portfolio"],
+        },
+        {
             name: "Production Deployment",
             icon: Cloud,
             description: "Production application releases.",
             usedIn: ["All Projects"],
+        },
+        {
+            name: "Render",
+            icon: Cpu,
+            description: "Frontend deployment platform.",
+            usedIn: ["Runwayy Store", "Portfolio"],
         },
         {
             name: "Application Configuration",
